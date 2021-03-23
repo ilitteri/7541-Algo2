@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{blindtext}
+
+\usepackage{tikz} % Graphs
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fullpage}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+% \usepackage{graphicx} % Required for including pictures
+% \usepackage[figurename=Figure]{caption}
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+% %\usepackage{paralist} % paragraph spacing
+% \usepackage{listings} % For source code
+% \usepackage{subfig}   % For subfigures
+% %\usepackage{physics}  % for simplified dv, and 
+\usepackage{enumitem} % useful for itemization
+% \usepackage{siunitx}  % standardization of si units
+
+\usepackage{tikz,bm} % Useful for drawing plots
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+\usepackage{dsfont}
+% \usepackage{hyperref}
+% \usepackage[T1]{fontenc}
+% \usepackage{multirow}
+
+\usepackage[table]{colortbl}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+%opening
+\title{Notas de Algoritmos}
+\author{Ivan Litteri}
+\date{}
+
+
+\lstset{style=mystyle}
+\begin{document}
+\maketitle
+\lstset{language=Python}
+
+% Import a section example
+% \section{Section}
+% \subfile{sections/example_section}
+
+\section*{Algoritmos de Ordenamiento}
+\subfile{sections/table.tex}
+
+\section*{Algoritmos de Ordenamiento Comparativos}
+\subfile{sections/comparative_sorting_algorithms.tex}
+
+\section*{Algoritmos de Ordenamiento No Comparativos}
+\subfile{sections/noncomparative_sorting_algorithms.tex}
+
+\section*{Propiedades de los Algoritmos de Ordenamiento}
+\subfile{sections/sorting_algorithms_properties.tex}
+
+\end{document}
