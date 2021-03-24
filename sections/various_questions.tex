@@ -1,0 +1,29 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{enumerate}
+    \item ¿Qué implica que un algoritmo de ordenamiento sea estable?
+    \item ¿Qué implica que un algoritmo de ordenamiento sea in-place?
+    \item ¿Qué implica que un algoritmo de ordenamiento sea comparativo? ¿En qué condiciones puede utilizarse?
+    \item ¿Es heapsort un algoritmo de ordenamiento estable?
+    \item ¿Es heapsort un algoritmo de ordenamiento in-place?
+    \item ¿Es heapsort un algoritmo de ordenamiento comparativo?
+    \item En un árbol binario, dado un nodo con dos hijos, explicar por qué su predecesor en el recorrido inorder no puede tener hijo derecho, y su sucesor (también, en el recorrido inorder) no puede tener hijo izquierdo.
+    \item Para implementar un TDA Cola de prioridad de minimos, nos proponen la siguiente solución: usar una estructura enlazada que mantendremos ordenada (con lo cuál, el mínimo es el primer elemento). ¿Es una buena solución en el caso general? Justificar. Comparar contra la implementación de cola de prioridad vista en clase.
+    \item ¿Cuál es la complejidad de heapsort? ¿es posible que conociendo información adicional logremos mejorar su complejidad?
+    \item ¿Es mergesort un algoritmo de ordenamiento estable?
+    \item ¿Es siempre mejor utilizar Counting Sort para ordenar un arreglo de números enteros por sobre utilizar un ordenamiento por Selección?
+    \item Definimos el siguiente algoritmo de División y Conquista que, esperamos, nos permita obtener el árbol de tendido mínimo de un Grafo. El algoritmo divide el conjunto de los vértices en dos, y llama recursivamente con un nuevo grafo sólo conformado por los vértices de una mitad, y las aristas que unen vértices de esa mitad. Llama para ambas mitades, y resuelve recursivamente el árbol de tendido mínimo de cada mitad (el caso base sería un grafo con un único vértice). Luego de resolver el árbol de tendido mínimo de ambas mitades, une ambos con la arista mínima que une los vértices de un lado con los del otro. Indicar y Justificar detalladamente cuál sería la complejidad de dicho algoritmo. ¿El algoritmo propuesto permite obtener el árbol de tendido mínimo? (suponer que el grafo es conexo). En caso de ser cierto, justificar, en caso de ser falso dar un contraejemplo.
+    \item Queremos comparar el heap $d$-ario (en el que cada nodo tiene hasta $d$ hijos) con el heap binario común, que tiene hasta 2 hijos.
+        \begin{enumerate}[label=\alph*]
+            \item ¿Cómo se representa un heap $d$-ario en un arreglo? ¿Cómo calculo el padre de un nodo, o los $d$ hinos de un nodo?
+            \item ¿Cuál es la altura de un heap $d$-ario con $n$ elementos, en términos de $n$ y $d$?
+            \item Dar una implementación eficiente de encolar (para un heap $d$-ario de máximos). Analizar en términos de $n$ y $d$ su eficiencia. Definir si tiene sentido la implementación de un heap $d$-ario por sobre uno binario.
+        \end{enumerate}
+    \item Explicar cómo harías para implementar un TDA Pila utilizando internamente un TDA Heap. Indicar el orden de cada una de las primitivas.
+    \item Nos dan para elegir entre los siguientes 3 algoritmos para solucionar el mismo problema ¿Cuál elegirías? Justificar calculando el orden de los algoritmos:
+        \begin{enumerate}[label=\alph*]
+            \item El algoritmo A reuelve el problema dividiéndolo en 5 subproblema de la mitad del tamaño, resolviendo cada subproblema de forma recursiva, y combinando las soluciones en tiempo real.
+            \item El algoritmo B resuelve el problema dividiéndolo en 9 subproblemas de tamaño $\frac{n}{3}$, resolviendo cada subproblema de forma recursova y combinando las soluciones en tiempo cuadrático de $n$.
+            \item El algoritmo C resuelve todos los problema de tamaño $n$ eligiendo un subproblema de tamaño $n-1$ en tiempo $O(n)$ luego resolviendo recursivamente ese subproblema.
+        \end{enumerate}
+\end{enumerate}
