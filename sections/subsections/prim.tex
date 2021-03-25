@@ -1,0 +1,22 @@
+\documentclass[../../main.tex]{subfiles}
+
+\subsubsection*{Paso a paso}
+\begin{enumerate}
+    \item Comienza en un vértice aleatorio, encola en un heap todas sus aristas.
+    \item El vértice origen queda como visitado.
+    \item Mientras el heap no está vacío, saca una arista.
+    \item Si ambos vértices de la arista fueron visitados, se descarta la arista (formaría un ciclo).
+    \item Caso contrario, se agrega la arista al árbol, y se encolan todas las aristas del nuevo vértice visitado.
+    \item Volvemos al paso 3.
+\end{enumerate}
+
+\subsubsection*{Algoritmo}
+\lstinputlisting[language=Python]{algorithms/graphs/prim.py}
+
+\subsection*{Complejidad}
+\begin{itemize}
+    \item Obtener el vértice aleatorio es $O(1)$, $O(V)$ en el peor de los casos.
+    \item Crear el árbol a partir de los vértices deñ grafo original es $O(V)$.
+    \item Ver los adyacentes de un vértice en particular $O(1)$ (despreciable).
+    \item En el peor de los casos, encolamos y desencolamos todas las aristas del grafo. Entonces, costará $O(E\cdot \log(V))$.
+\end{itemize}

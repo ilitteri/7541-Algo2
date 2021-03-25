@@ -1,0 +1,27 @@
+\documentclass[../../main.tex]{subfiles}
+
+\subsubsection*{Paso a paso}
+\begin{enumerate}
+    \item Ordenamos las arista de menor a mayor.
+    \item Por cada arista (en ese orden), si los vértices no están en una misma componente conexa (dentro del árbol), agregamos la arista, y ahora ambos vértices están en la misma componente conexa.
+\end{enumerate}
+
+\subsubsection*{TDA UnionFind (o clase de equivalencia)}
+\begin{itemize}
+    \item Por cada elemento tenemos una posición en un arreglo, que se autoreferencia.
+    \item Cuándo unimos, simplemente hacemos que en vez de autoreferenciarse, uno de los dos pase a apuntar al otro.
+    \item Para saber en qué clase de equivalencia está un elemento, preguntamos a quién referencia dicho elemento, hasta encontrar a uno que se autoreferencie.
+    \item Para planchar la estructura, al hacer el paso anterior, una vez que encuentro a quien pertenece un elemento, hacemos que todo el camino directamente referencie al autoreferenciado (acortamos el camino).
+    \item Funciona en $O(1)$ (aprox.).
+\end{itemize}
+
+\subsubsection*{Algoritmo}
+\lstinputlisting[language=Python]{algorithms/graphs/kruskal.py}
+
+\subsection*{Complejidad}
+\begin{itemize}
+    \item Crear el conjunto a partir de los vértices del grafo es $O(V)$.
+    \item Ordenar como mucho es $O(E\log(V))$.
+    \item El for es mínimo $O(E)$, en el peor de los casos es $O(E\log(V))$.
+    \item (Si tuviésemos más información de las aristas, podríamos usar un ordenamiento no comparativo y el Algoritmo de Kruskal podría ser más rápido que el de Prim.).
+\end{itemize}
