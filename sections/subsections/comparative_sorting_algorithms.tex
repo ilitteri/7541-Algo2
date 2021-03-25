@@ -1,0 +1,26 @@
+\documentclass[../main.tex]{subfiles}
+
+Se define un ordenamiento comparativo a cualquier algoritmo de ordenamiento que determina el orden de ordenamiento comparando pares de elementos. Se basan en comparar elementos para poder ordenarlos. Se tiene como precondición que los datos a ordenar sean comparables. Tiene como cota mínima $\Omega(n\cdot log(n))$ por lo tanto no puede ser mejor que esto.
+
+\subsubsection*{Merge Sort}
+\lstinputlisting[language=Python]{algorithms/sorting/merge_sort.py}
+
+\subsubsection*{Quick Sort}
+\lstinputlisting[language=Python]{algorithms/sorting/quick_sort.py}
+
+\subsubsection*{Selection Sort}
+\lstinputlisting[language=Python]{algorithms/sorting/selection_sort.py}
+
+\subsubsection*{Insertion Sort}
+\lstinputlisting[language=Python]{algorithms/sorting/insertion_sort.py}
+
+\subsubsection*{Bubble Sort}
+\lstinputlisting[language=Python]{algorithms/sorting/bubble_sort.py}
+
+\subsubsection*{Heapsort}
+
+\lstinputlisting[language=Python]{algorithms/sorting/heapsort.py}
+
+Este algoritmo de ordenamiento no es estable ya que cuando se aplica \textit{downheap}, como las cosas suben desde distintas ramas se pierde completamente el orden relativo; también si vamos a desencolar, el que estaba último pasa a estar primero y luego baja, y puede bajar por cualquier otra rama, etc. Es un algoritmo \textit{in-place}.
+
+La complejidad de heapify es $O(log(n))$, armar el heap cuesta $O(n)$. Entonces su complejidad es $O(n\cdot log(n))$.
