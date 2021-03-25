@@ -1,0 +1,22 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{itemize}
+    \item El corte mínimo en una red es el peso total (mínimo) que necesitamos desconectar para que un grafo deje de estar conectado (conexo para grafos no dirigidos, déilmente conexo para dirigido).
+    \item Si el grafo es no pesado corresponde a la cantidad de aristas (como considerar todos como peso = 1).
+    \item Esto se aplica a cualquier tipo de grafo, pero para redes de flujo puede tener una ventaja.
+\end{itemize}
+
+\subsubsection*{Teorema \textit{max flow min cut}}
+
+\begin{itemize}
+    \item Si el grafo corresponde a una red de flujo, entonces el corte mínimo tiene capacidad igual al flujo máximo.
+    \item Va a suceder que la fuente y el sumidero se encuentren en sets opuestos.
+\end{itemize}
+
+\subsection*{Como obtener el corte mínimo}
+\begin{enumerate}
+    \item Agaramos nuestro grafo residual.
+    \item Vemos todos los vértices a los que llegamos desde la fuente.
+    \item Todas las aristas (del grafo original) que vayan de un vértice al que podamos llegar (en el residual) a uno que no (ídem), son parte del corte.
+\end{enumerate}
+
