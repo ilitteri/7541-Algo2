@@ -1,6 +1,6 @@
 \documentclass[../../main.tex]{subfiles}
 
-\subsubsection*{Paso a paso}
+\subsubsection{Paso a paso}
 \begin{enumerate}
     \item Comienza en un vértice aleatorio, encola en un heap todas sus aristas.
     \item El vértice origen queda como visitado.
@@ -10,10 +10,10 @@
     \item Volvemos al paso 3.
 \end{enumerate}
 
-\subsubsection*{Algoritmo}
+\subsubsection{Algoritmo}
 \lstinputlisting[language=Python]{algorithms/graphs/prim.py}
 
-\subsection*{Complejidad}
+\subsubsection{Complejidad}
 \begin{itemize}
     \item Obtener el vértice aleatorio es $O(1)$, $O(V)$ en el peor de los casos.
     \item Crear el árbol a partir de los vértices deñ grafo original es $O(V)$.

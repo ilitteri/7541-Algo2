@@ -4,7 +4,7 @@
 \usepackage[english]{babel}
 
 \usepackage{blindtext}
-
+\usepackage{imakeidx}
 \usepackage{tikz} % Graphs
 
 \usepackage{listings}
@@ -70,30 +70,31 @@
 \author{Ivan Litteri}
 \date{}
 
+\makeindex[columns=3, title=Alphabetical Index, intoc]
 
 \lstset{style=mystyle}
 \begin{document}
+
 \maketitle
 \lstset{language=Python}
+\tableofcontents
+\clearpage
 
-% Import a section example
-% \section{Section}
-% \subfile{sections/example_section}
-
-\section*{Algoritmos de Ordenamiento}
+\section{Algoritmos de Ordenamiento}
 \subfile{sections/subsections/table.tex}
 \subfile{sections/sorting_algorithms.tex}
 
-\section*{Grafos}
+\section{Grafos}
 \subfile{sections/graph_theory.tex}
 
-\section*{Algoritmos de Grafos}
+\section{Algoritmos de Grafos}
 \subfile{sections/graph_algorithms.tex}
 
-\subsection*{Preguntas}
+\section{Preguntas}
 \subfile{sections/various_questions.tex}
 
-\subsection*{Verdadero o Falso}
+\section{Verdadero o Falso}
 \subfile{sections/true_or_false.tex}
 
+\printindex
 \end{document}

@@ -1,12 +1,12 @@
 \documentclass[../../main.tex]{subfiles}
 
-\subsubsection*{Paso a paso}
+\subsubsection{Paso a paso}
 \begin{enumerate}
     \item Ordenamos las arista de menor a mayor.
     \item Por cada arista (en ese orden), si los vértices no están en una misma componente conexa (dentro del árbol), agregamos la arista, y ahora ambos vértices están en la misma componente conexa.
 \end{enumerate}
 
-\subsubsection*{TDA UnionFind (o clase de equivalencia)}
+\subsubsection{TDA UnionFind (o clase de equivalencia)}
 \begin{itemize}
     \item Por cada elemento tenemos una posición en un arreglo, que se autoreferencia.
     \item Cuándo unimos, simplemente hacemos que en vez de autoreferenciarse, uno de los dos pase a apuntar al otro.
@@ -15,10 +15,10 @@
     \item Funciona en $O(1)$ (aprox.).
 \end{itemize}
 
-\subsubsection*{Algoritmo}
+\subsubsection{Algoritmo}
 \lstinputlisting[language=Python]{algorithms/graphs/kruskal.py}
 
-\subsection*{Complejidad}
+\subsubsection{Complejidad}
 \begin{itemize}
     \item Crear el conjunto a partir de los vértices del grafo es $O(V)$.
     \item Ordenar como mucho es $O(E\log(V))$.
