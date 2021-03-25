@@ -2,45 +2,65 @@
 
 \begin{enumerate}
     \item
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Si en los ABBs con \textit{misma} función de comparación se guardan los mismos elementos en \textit{diferente} orden, tendrán el mismo inorder.
             \item Si dos ABBs \textit{diferente} función de comparación se guardan los mismos elementos en el \textit{mismo} orden, tendrán el mismo inorder.
             \item Si en dos ABBs con \textit{misma} función de comparación se guardan los mismos elementos en \textit{diferente} orden, tendrán el mismo preorder.
         \end{enumerate}
     \item
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Se puede aplicar el algoritmo de Prim apra obtener el Árbol de Tendido Mínimo en un grafo con aristas de pesos negativos.
             \item Si en vez del árbol de tendido mínimo de un grafo buscáramos obtener el árbol de tendido máximo del mismo, podríamos modificar lévemente el Algoritmo de Kruskal para poder obtener dicho árbol.
-            \item Si el grafo es no pesado, de todas formas los Algoritmos de Prim y Jruskal se pueden utilizar y son la mejor opción para obtener un árbol de tendido.
+            \item Si el grafo es no pesado, de todas formas los Algoritmos de Prim y Kruskal se pueden utilizar y son la mejor opción para obtener un árbol de tendido.
         \end{enumerate}
     \item 
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Dado un grafo $G$ no dirigido con pesos positivos, y $T$ un Árbol de tendido mínimo de dicho grafo, si se elevan al cuadrado los pesos de las aristas de $G$, $T$ sigue siendo un árbol de tendido mínimo de $G$.
             \item Dado un grafo $G$ no dirigido con pesos positivos, y $P$ un camino de costo mínimo de $v$ a todos los demás vértices de $G$, si se leevan al cuadrado los pesos de las aristas de $G$, $P$ sigue siendo camino mínimo.
         \end{enumerate}
     \item 
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Siempre que se trabaje con datos discretos me conviene ordenar usando Counting Sort.
             \item Para que RadixSort funcione correctamente, el algoritmo auxiliar a utilziar debe ser in-place.
             \item EN Hpscotch hashing puede darse el caso que una búsqueda no sea en tiempo constante, según cómo sea la función de hashing.
         \end{enumerate}
     \item Implementar un algoritmo que reciba un grafo dirigido y nos devuelva la cantidad de componentes débilmente conexas
     de este. Indicar y justificar la complejidad del algoritmo implementado.
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Para ordenar correctamente utilizando RadixSort, se debe ordenar los datos de la \textit{cifra} menos significativa a la más significativa.
             \item BucketSort será lineal en tanto y en cuanto el algoritmo auxiliar para ordenar los buckets sea de tiempo lineal.
             \item En un AVL, tras una inserción, es encesario buscar en todo el árbol si se generó un desbalanceo.
         \end{enumerate}
     \item 
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item Si queremos ordenar por año todos los sucesos importantes ocurridos en el mundo desde el año 0 hasta la actualidad, CountingSort es una buena alternativa. Consideremos que todos los años hay sucesos importantes, y en este en particular sólo faltó la invasión zombie (aunque todavía queda diciembre...).
             \item RadixSort logra una complejidad lineal (dadas las condiciones adecuadas) reduciendo la cantidad de comparaciones que realiza entre los datos.
             \item Un potencial problema de Hash \& Displace es que requerimos de varias funciones de hashing, y ni así podemos estar seguros que todo funcionará (salvo que sean realmente muchas).
         \end{enumerate}
     \item 
-        \begin{enumerate}[label=\alph*]
+        \begin{enumerate}[label=\alph*)]
             \item En un grafo bipartito no pueden haber ciclos con cantidad impar de vértices que lo compongan.
-                \item En un árbol (grafo no dirigido, conexo y sin ciclos) todos los vértices con al menos dos adyacentes son puntos de articulación.
-                \item En un grafo dirigido, no existe camino de un vpertice $v$ de una componente fuertemente conexa hacia un vértice $w$ de otra componente fuertemente conexa.
-            \end{enumerate}
+            \item En un árbol (grafo no dirigido, conexo y sin ciclos) todos los vértices con al menos dos adyacentes son puntos de articulación.
+            \item En un grafo dirigido, no existe camino de un vértice $v$ de una componente fuertemente conexa hacia un vértice $w$ de otra componente fuertemente conexa.
+        \end{enumerate}
+    \item 
+        \begin{enumerate}[label=\alph*)]
+            \item Al resolver el problema de maximización de flujo buscamos caminos entre la fuente y el sumidero en la red residual. Si en dicho camino se utiliza una arista que no existe en el grafo original, significa que no podemos considerar ese camino para aumentar el flujo total.
+            \item En un grafo no dirigido con pesos negativos, podemos aplicar el algoritmo de Bellman-Ford para obtener el camino mínimo desde un vértice hacia todos los demás.
+            \item Podemos calcular el Árbol de tendido mínimo de un grafo no dirigido que tenga pesos negativos.
+        \end{enumerate}
+    \item 
+        \begin{enumerate}[label=\alph*)]
+            \item Al resolver el problema de maximización de flujo buscamos caminos entre la fuente y el sumidero en la red residual. Si en dicho camino se utiliza una arista que no existe en el grafo original, significa que el flujo en la arista original (la del grafo original) se debe aumentar.
+            \item  No podemos resolver el problema de maximización de flujo si hay ciclos en el grafo.
+            \item Si calculo el árbol de tendido mínimo de un grafo, y luego sobre ese árbol obtengo los caminos mínimos de un vértice a todos los demás, los caminos pueden coincidir con los caminos mínimos en el grafo original, pero no siempre sucederá. Aclaración: dar los ejemplos o contraejemplos que justifiquen/ejemplifiquen tu respuesta.
+        \end{enumerate}
+    \item 
+        \begin{enumerate}[label=\alph*)]
+            \item Al resolver el problema de maximización de flujo buscamos caminos entre la fuente y el sumidero en la red residual. Si en dicho camino se utiliza una arista que no existe en el grafo original, significa que el flujo en la arista original (la del grafo original) se debe disminuir, por lo que el flujo total también disminuye. 
+            \item Todo grafo dirigido con un vértice de grado de entrada 0 y un vértice de salida 0 es Red de Flujo.
+            \item  Siempre podemos calcular el camino mínimo desde un vértice en un grafo dirigido que tenga pesos negativos.
+        \end{enumerate}
 \end{enumerate}
+
+\clearpage
