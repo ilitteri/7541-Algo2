@@ -8,11 +8,11 @@
     \item Heapsort es in-place ya que \textit{heapify}, modifica al arreglo original, y \textit{downheap} también.
     \item Heapsort es un algoritmo de ordenamiento comparativo ya compara los valores del arreglo para darle la propiedad de heap.
     \item Dado un nodo con dos hijos, su predecesor en el recorrido inorder no puede tener hijo derecho, ya que si lo tuviese, éste no sería su predecesor en dicho orden de recorrido. Lo mismo para el sucesor en caso de tener hijo izquierdo. (Agregar ejemplo).
-    \item Ésta implementación no es una buena solución en el caso general. Para lograr desencolar en $O(1)$ se sacrifica el costo de inserción, ya que pasará a costar $O(n)$. Respecto a la implementación de la cola de prioridad vista en clase, la inserción en el heap cuesta $O(\log(n))$ y en la estructura enlazada cuesta $O(n)$ siendo $n$ la antidad de elementos del arreglo. Y, el desencolado en el heap cuesta $O(\log(n))$ y en la estructura enlazada cuesta $O(1)$ siendo $n$ el número de elementos del arreglo.
-    \item La complejidad de heapsort (\textit{heapify} cuesta $O(n)$ y \textit{downheap} cuesta $O(n\log(n))$) utilizando un algoritmo de ordenamiento comparativo es $O(n\log(n))$. Teniendo información adicional sobre los elementos del arreglo, podemos llegar a utilizar un algoritmo de ordenamiento no comparativo y mejorar su complejidad.
+    \item Ésta implementación no es una buena solución en el caso general. Para lograr desencolar en $\Theta(1)$ se sacrifica el costo de inserción, ya que pasará a costar $\Theta(n)$. Respecto a la implementación de la cola de prioridad vista en clase, la inserción en el heap cuesta $\Theta(\log(n))$ y en la estructura enlazada cuesta $\Theta(n)$ siendo $n$ la antidad de elementos del arreglo. Y, el desencolado en el heap cuesta $\Theta(\log(n))$ y en la estructura enlazada cuesta $\Theta(1)$ siendo $n$ el número de elementos del arreglo.
+    \item La complejidad de heapsort (\textit{heapify} cuesta $\Theta(n)$ y \textit{downheap} cuesta $\Theta(n\log(n))$) utilizando un algoritmo de ordenamiento comparativo es $\Theta(n\log(n))$. Teniendo información adicional sobre los elementos del arreglo, podemos llegar a utilizar un algoritmo de ordenamiento no comparativo y mejorar su complejidad.
     \item Mergesort es un algorimo de ordenamiento estable.
     \item No siempre es mejor utilizar Counting Sort para ordenar un arreglo de números enteros por sobre utilizar un ordenamiento por Selcción, porque si el rango de elementos en el arreglo es infinito, ya no nos sirve usar Counting Sort, pero siempre y cuando el rango sea finito y conocido, nos conviene usar Counting Sort.
-    \item El algoritmo propuesto no permite obtener el árbol de tendido mínimo, ya que va a generar un árbol distinto dependiendo de la distribución de los elementos en el arreglo de vértices inicial (y de peso total distinto) (Dar ejemplo con grafo $K_{5}$ con $V = \{A, B, C, D, E\}$, y $E = \{(A, B, 1), (A, C, 3), (A, D, 5), (A, E, 10), (B, C, 20), (B, D, 1), (B, E, 2), (C, D, 0), (C, E, 5), (D, E, 1)\}$ con el arreglo de vértices inicial $[A, B, C, D, E]$, y luego con el arreglo de vértices inicial $[A, E, D, B, C]$). Y la complejidad es $O(V)$ ya que obtener los vértices del grafo es $O(V)$ y la función recursiva, por Teorema Maestro $O(\log(V) + \log(n))$.
+    \item El algoritmo propuesto no permite obtener el árbol de tendido mínimo, ya que va a generar un árbol distinto dependiendo de la distribución de los elementos en el arreglo de vértices inicial (y de peso total distinto) (Dar ejemplo con grafo $K_{5}$ con $V = \{A, B, C, D, E\}$, y $E = \{(A, B, 1), (A, C, 3), (A, D, 5), (A, E, 10), (B, C, 20), (B, D, 1), (B, E, 2), (C, D, 0), (C, E, 5), (D, E, 1)\}$ con el arreglo de vértices inicial $[A, B, C, D, E]$, y luego con el arreglo de vértices inicial $[A, E, D, B, C]$). Y la complejidad es $\Theta(V)$ ya que obtener los vértices del grafo es $\Theta(V)$ y la función recursiva, por Teorema Maestro $\Theta(\log(V) + \log(n))$.
     \item 
         Calculo de la posición del padre:
         \begin{equation*}
@@ -27,32 +27,32 @@
         \begin{enumerate}
             \item Usando el Teorema Maestro:
                 \begin{equation}
-                    T(n) = 5\left(\frac{n}{2}\right) + O(n)
+                    T(n) = 5\left(\frac{n}{2}\right) + \Theta(n)
                 \end{equation}
                 \begin{equation}
                     A = 5, B = 2, C = 1
                 \end{equation}
                 \begin{equation}
-                    \log_{B}(A) > C \Rightarrow O(n^{C
+                    \log_{B}(A) > C \Rightarrow \Theta(n^{C
                     \log_{B}(A)}) 
                 \end{equation}
                 \begin{equation}
-                    O(n^{\log_{2}(5)}) \approx O(n^{2})
+                    \Theta(n^{\log_{2}(5)}) \approx \Theta(n^{2})
                 \end{equation}
             \item Usando el Teorema Maestro:
                 \begin{equation}
-                    T(n) = 9\left(\frac{n}{3}\right) + O(n^{2})
+                    T(n) = 9\left(\frac{n}{3}\right) + \Theta(n^{2})
                 \end{equation}
                 \begin{equation}
                     A = 9, B = 3, C = 2
                 \end{equation}
                 \begin{equation}
-                    \log_{B}(A) = C \Rightarrow O(n^{C}\log_{B}(n)) = O(n^{C}\log(n)) 
+                    \log_{B}(A) = C \Rightarrow \Theta(n^{C}\log_{B}(n)) = \Theta(n^{C}\log(n)) 
                 \end{equation}
                 \begin{equation}
-                    O(n^{2}\log(n))
+                    \Theta(n^{2}\log(n))
                 \end{equation}
-            \item $O(n^{2})$
+            \item $\Theta(n^{2})$
             
         \end{enumerate}
 \end{enumerate}

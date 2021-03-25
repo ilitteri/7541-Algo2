@@ -8,8 +8,8 @@ def es_disperso(grafo) -> bool:
     return (no_vertices*(no_vertices-1))/2 *.05 > no_aristas
 
 ''' Complejidad
-    Recorrer cada vertice del grafo es O(V), y para cada vertice, recorrer sus
-adyacentes, si el grafo esta implementado con una matriz de adyacencia, es O(V) 
+    Recorrer cada vertice del grafo es \Theta(V), y para cada vertice, recorrer sus
+adyacentes, si el grafo esta implementado con una matriz de adyacencia, es \Theta(V) 
 como mucho, y el for itera E veces, entonces la complejidad de la iteracion del 
-for interno es O(V*(V+E))entonces la complejidad de es_disperso queda O(V^2+V*E).
+for interno es \Theta(V*(V+E))entonces la complejidad de es_disperso queda \Theta(V^2+V*E).
 '''

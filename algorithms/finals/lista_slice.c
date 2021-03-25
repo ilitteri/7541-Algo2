@@ -29,7 +29,7 @@ lista_t *lista_slice(const lista_t *original, size_t inicio, size_t fin)
         return NULL;
     }
 
-    copy_slice(original, slice, inicio, fin) // O(n)
+    copy_slice(original, slice, inicio, fin) // \Theta(n)
 
     // Devuelvo el slice.
     return slice;
@@ -37,5 +37,5 @@ lista_t *lista_slice(const lista_t *original, size_t inicio, size_t fin)
 
 /* Complejidad
     La mayor complejidad se la lleva la funcion auxiliar copy_slice que cuesta
-en el peor caso O(n) siendo n el largo de la lista original menos uno.
+en el peor caso \Theta(n) siendo n el largo de la lista original menos uno.
 */

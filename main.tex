@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[spanish]{babel}
 
 \usepackage{blindtext}
 \usepackage{imakeidx}
@@ -38,6 +38,7 @@
 % \usepackage{multirow}
 
 \usepackage[table]{colortbl}
+\usepackage{hyperref}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -66,13 +67,18 @@
 \def\code#1{\texttt{#1}}
 
 %opening
-\title{Notas de Algoritmos}
+\title{Notas de Algoritmos y Programación II}
 \author{Ivan Litteri}
 \date{}
 
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 \lstset{style=mystyle}
+
+% \addto\captionsenglish{
+\renewcommand*\contentsname{Índice}
+% }
+
 \begin{document}
 
 \maketitle

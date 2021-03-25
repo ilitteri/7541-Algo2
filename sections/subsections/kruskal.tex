@@ -12,7 +12,7 @@
     \item Cuándo unimos, simplemente hacemos que en vez de autoreferenciarse, uno de los dos pase a apuntar al otro.
     \item Para saber en qué clase de equivalencia está un elemento, preguntamos a quién referencia dicho elemento, hasta encontrar a uno que se autoreferencie.
     \item Para planchar la estructura, al hacer el paso anterior, una vez que encuentro a quien pertenece un elemento, hacemos que todo el camino directamente referencie al autoreferenciado (acortamos el camino).
-    \item Funciona en $O(1)$ (aprox.).
+    \item Funciona en $\Theta(1)$ (aprox.).
 \end{itemize}
 
 \subsubsection{Algoritmo}
@@ -20,8 +20,8 @@
 
 \subsubsection{Complejidad}
 \begin{itemize}
-    \item Crear el conjunto a partir de los vértices del grafo es $O(V)$.
-    \item Ordenar como mucho es $O(E\log(V))$.
-    \item El for es mínimo $O(E)$, en el peor de los casos es $O(E\log(V))$.
+    \item Crear el conjunto a partir de los vértices del grafo es $\Theta(V)$.
+    \item Ordenar como mucho es $\Theta(E\log(V))$.
+    \item El for es mínimo $\Theta(E)$, en el peor de los casos es $\Theta(E\log(V))$.
     \item (Si tuviésemos más información de las aristas, podríamos usar un ordenamiento no comparativo y el Algoritmo de Kruskal podría ser más rápido que el de Prim.).
 \end{itemize}

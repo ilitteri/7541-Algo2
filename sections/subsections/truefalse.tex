@@ -11,7 +11,7 @@
         \begin{enumerate}[label=\alph*)]
             \item \textbf{TRUE}. No hay problema en hacer esto, funcionaría igual que teniendo todos los pesos positivos.
             \item \textbf{TRUE}. Si ordeno de mayor a menor las aristas debería poder obtener un Árbol de Tendido Máximo.
-            \item \textbf{FALSE}. Usando BFS o DFS, con el diccionario de padres puedo armar un árbol de tendido, y con complejidad $O(V+E)$ contra la complejidad $O(E\log(V))$ de Kruskal y Prim.
+            \item \textbf{FALSE}. Usando BFS o DFS, con el diccionario de padres puedo armar un árbol de tendido, y con complejidad $\Theta(V+E)$ contra la complejidad $\Theta(E\log(V))$ de Kruskal y Prim.
         \end{enumerate}
     \item 
         \begin{enumerate}[label=\alph*)]
@@ -22,18 +22,18 @@
         \begin{enumerate}[label=\alph*)]
             \item \textbf{FALSE}. Que los valores sean discretos no es condición suficiente para utilizar Counting Sort, necesitaríamos saber además si el rango es acotado.
             \item \textbf{FALSE}. Una condición necesaria para que RadixSort funcione correctamente es que el algoritmo de ordenamiento auxiliar sea estable; la condición de ser in-place no es necesaria. Sólo se usa un algoritmo de ordenamiento auxiliar in-place cuando la memoria es algo a tener en cuenta. 
-            \item \textbf{FALSE}. Las búsquedas siempre son $O(1)$ siempre que $k$ tenga el valor que tenga. La función de hashing va a variar la complejidad de la resolución de colisiones.
+            \item \textbf{FALSE}. Las búsquedas siempre son $\Theta(1)$ siempre que $k$ tenga el valor que tenga. La función de hashing va a variar la complejidad de la resolución de colisiones.
         \end{enumerate}
     \item 
         \begin{enumerate}[label=\alph*)]
             \item \textbf{TRUE}. Es la forma en la que RadixSort ordena.
-            \item \textbf{FALSE}. No es condición necesaria. Con que el algoritmo de ordenamiento auxiliar sea $O(n\log(n))$, ya que se puede despreciar el crecimiento logarítmico con valores no tan grandes de $B$ (cantidad de baldes) quedando $O(n)$.
+            \item \textbf{FALSE}. No es condición necesaria. Con que el algoritmo de ordenamiento auxiliar sea $\Theta(n\log(n))$, ya que se puede despreciar el crecimiento logarítmico con valores no tan grandes de $B$ (cantidad de baldes) quedando $\Theta(n)$.
             \item \textbf{}. Sólo se necesita revisar el camino de inserción.
         \end{enumerate}
     \item 
         \begin{enumerate}[label=\alph*)]
-            \item \textbf{TRUE}. Tenemos datos discretos en un rango acotado y conocido, siendo $k$ el número de sucesos y $n$ el rango (0 a 2021) entonces, Counting Sort es una buena opción, y la complejidad sería $O(n+k)$ pero $k << n \Rightarrow O(n)$. Además es estable.
-            \item \textbf{FALSE}. RadixSort es un algoritmo de ordenamiento no comparativo. Para lograr una complejidad lineal $O(d\cdot (n+k))$, siendo $k$ el rango de los valores, $d$ la cantidad de "dígitos", y $n$ la cantidad de elementos. Si $d << \log(n) \wedge k << n \Rightarrow O(n)$.
+            \item \textbf{TRUE}. Tenemos datos discretos en un rango acotado y conocido, siendo $k$ el número de sucesos y $n$ el rango (0 a 2021) entonces, Counting Sort es una buena opción, y la complejidad sería $\Theta(n+k)$ pero $k << n \Rightarrow \Theta(n)$. Además es estable.
+            \item \textbf{FALSE}. RadixSort es un algoritmo de ordenamiento no comparativo. Para lograr una complejidad lineal $\Theta(d\cdot (n+k))$, siendo $k$ el rango de los valores, $d$ la cantidad de "dígitos", y $n$ la cantidad de elementos. Si $d << \log(n) \wedge k << n \Rightarrow \Theta(n)$.
             \item  
         \end{enumerate}
     \item 
