@@ -1,0 +1,17 @@
+\documentclass[../../main.tex]{subfiles}
+
+\subsubsection{Consigna}
+
+\begin{enumerate}
+    \item Implementar un algoritmo que, dado un Grafo no dirigido, determine si tiene un ciclo, o no. Indicar el orden del algoritmo.
+    \item Se quiere implementar un TDA Diccionario con las siguientes primitivas: \code{obtener(x)} devuelve el valor de $x$ en el diccionario; \code{insertar(x, y)} inserta en el diccionario la clave x con el valor y (entero); \code{borrar(x)} borra la entrada de x; \code{add(x,y)} le suma y al contenido de x; \code{add\_all(y)} le suma y a todos los valores. Proponer una implementación donde todas las operaciones sean $O(1)$. Justificar el orden de las operaciones.
+    \item Implementar un algoritmo que, dado un arreglo de $n$ números enteros cuyos valores van de $0$ a $K$ (constante conocida), procese dichos números en tiempo $O(n+K)$, devuelva alguna estructura que permita consultar cuántos valores ingresados están en el intervalo $(A, B)$, en tiempo $O(1)$. Explicar cómo se usaría dicha estructura para poder realizar tales consultas.
+\end{enumerate}
+
+\subsubsection{Resolción}
+
+\begin{enumerate}
+    \item \lstinputlisting[language=Python]{../../algorithms/finals/tiene_ciclos.py}
+    \item \lstinputlisting[language=Python]{../../algorithms/finals/dict_add_all.py}
+    \item \lstinputlisting[language=Python]{../../algorithms/finals/intervalo.py}
+\end{enumerate}
