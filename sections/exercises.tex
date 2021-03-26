@@ -1,0 +1,53 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{enumerate}
+    \item Implementar un algoritmo que, dado un Grafo no dirigido, determine si tiene un ciclo, o no. Indicar el orden del algoritmo.
+    \item Se quiere implementar un TDA Diccionario con las siguientes primitivas: \lstinline{obtener(x)} devuelve el valor de $x$ en el diccionario; \lstinline{insertar(x, y)} inserta en el diccionario la clave x con el valor y (entero); \lstinline{borrar(x)} borra la entrada de x; \lstinline{add(x,y)} le suma y al contenido de x; \lstinline{add\_all(y)} le suma y a todos los valores. Proponer una implementación donde todas las operaciones sean $\Theta(1)$. Justificar el orden de las operaciones.
+    \item Implementar un algoritmo que, dado un arreglo de $n$ números enteros cuyos valores van de $0$ a $K$ (constante conocida), procese dichos números en tiempo $\Theta(n+K)$, devuelva alguna estructura que permita consultar cuántos valores ingresados están en el intervalo $(A, B)$, en tiempo $\Theta(1)$. Explicar cómo se usaría dicha estructura para poder realizar tales consultas.
+    \item  Implementar una función que dados dos arreglos de n y m elementos, respectivamente, devuelva si ambos arreglos tienen todos sus elementos diferentes entre sí en $\Theta(n + m)$. Justificar el orden de la función implementada.
+    \item Implementar un algoritmo que permita definir si un Grafo es un pseudo-bosque. Un Grafo es un pseudo-bosque si tiene a lo sumo un ciclo (considerar que el grafo podría no ser conexo). El algoritmo debe ejecutar de forma \textbf{lineal} tanto en la cantidad de vértices como de aristas. Justificar el orden del algoritmo implementado.
+    \item Implementar un algoritmo que permita ordenar un arreglo de n números cuyos valores van de 0 a $n^{2}-1$ en tiempo \textbf{lineal}. \textit{Ayuda}: Para resolver este problema, no es conveniente ver los números necesariamente en base 10.
+    \item Implementar en C una función \lstinline{lista\_t* lista\_map(lista\_t*, void* (*f) (void*))} que, utilizando el \textbf{iterador interno} de la lista, permita crear \textbf{una nueva lista} con cada uno de los elementos de la recibida por parámetro, luego de haberles aplicado la función \lstinline{f}. Pista: recordar que la primitiva \lstinline{lista\_iterar} recibe un puntero \lstinline{void* extra} que puede ser un puntero a cualquier cosa. Puede ser un puntero a una estructura que guarde, por ejemplo, un puntero a
+    función, entre otras cosas.
+    \item Implementar en C una primita \lstinline{lista\_t* lista\_slice(const lista\_t* original, size\_t inicio, size\_t fin)} que devuelva una \textbf{nueva} lista con los elementos de la original que se encuentran entre las posición \lstinline{inicio} y \lstinline{fin} (incluyendo el que se encuentra en la posición \lstinline{inicio}, excluyendo el que se encuentra en la posición \lstinline{fin}). Considerar la primera posición de la lista como la posición 0. En caso que \lstinline{fin} sea menor o igual a \lstinline{inicio}, devolver una lista vacía. En caso que \lstinline{fin} sea mayor a la cantidad de elementos de la lista, simplemente agregar hasta el último. Si \lstinline{inicio} es mayor a dicha última posición válida, devolver una lista vacía. Indicar y justificar la complejidad del algoritmo implementado.
+    Ejemplos:
+    \item Implementar un algoritmo que determine si un grafo no dirigido es un grafo disperso. Se considera que un grafo es disperso si tiene menos del $5\%$ de las aristas totales que puede llegar a tener. Indicar y justificar el orden del algoritmo, si el grafo se encuentra implementado con matriz de adyacencia.
+    \item A un grafo pesado y no dirigido se le obtuvo un árbol de tendido mínimo. Sobre dicho árbol se quiere obtener caminos mínimos. Implementar un algoritmo que reciba dicho árbol y un vértice v y obtenga los caminos mínimos desde v hacia todos los demás vértices (sobre dicho grafo en forma de árbol, no el grafo original) en tiempo lineal de la cantidad de vértices y aristas. Justificar la complejidad del algoritmo implementado.
+    \item Implementar un algoritmo que reciba un grafo dirigido y nos devuelva la cantidad de componentes débilmente conexas de este. Indicar y justificar la complejidad del algoritmo implementado.
+    \item El servicio de correo electrónico de una oficina tiene casillas de correo. Cada casilla tiene un nombre de usuario (dueño de la casilla), e-mail, contraseña, y mensajes (clasificados en enviados y recibidos). Se pueden listar los mensajes recibidos
+    respetando el orden de llegada inverso (los últimos que llegaron primero), recibir nuevos mensajes y leer un mensaje indicado. También permite enviar mensajes, que se mostrarán de más recientes a más antiguos. Los mensajes de correo tienen los datos e-mail del emisor, contenido, y un estado (leído o no). Implementar las funciones:
+    
+    \begin{enumerate}[label=\alph*)]
+        \item `escribirUnMensaje` que dado un e-mail y contraseña, un destinatario y un texto, envie un mensaje.
+        \item `verMisMensajes` que dado un e-mail y contraseña, su clasificación (enviados o recibidos) y una cantidad $n$, muestre los último $n$ mensajes enviados (o recibidos) por ese usuario de más reciente a más antiguo.
+    \end{enumerate}
+    Considerar estructuras necesarias para representar el servicio de correo electrónico de manera eficiente. Justificar la elección de la estructuras en función de la eficiencia de las operaciones.
+    \item Tenemos un arreglo de tamaño $2n$ de la forma $\{C1, C2, C3, \dots, Cn, D1, D2, D3, \dots, Dn\}$, tal que la cantidad total de elementos del arreglo es potencia de 2 (por ende, $n$ tambien lo es). Implementar un algoritmo de División y Conquista que modifique el arreglo de tal forma que quede con la forma $\{C1, D1, C2, D2, C3, D3, \dots, Cn, Dn\}$ \textbf{sin utilizar espacio adicional} (obviando el utilizado por la recursividad). ¿Cuál es la complejidad del algoritmo?
+
+    \textit{Pista:} pensar primero cómo habría que hacer si el arreglo tuviera 4 elementos ($\{C1, C2, D1, D2\}$). Luego pensar a partir de allí el caso de 8 elementos, etc... para encontrar el patrón.
+    \item Implementar el TDA Fracción. Dicho TDA debe tener las siguientes primitivas, cuya documentación puede encontrarse en `fraccion.h`:
+
+    \lstinline{fraccion\_t* fraccion\_crear(int numerador, int denominador);}\\
+    \lstinline{fraccion\_t* fraccion\_sumar(fraccion\_t* f1, fraccion\_t* f2);}\\
+    \lstinline{fraccion\_t* fraccion\_mul(fraccion\_t* f1, fraccion\_t* f2);}\\
+    \lstinline{char* fraccion\_representacion(fraccion\_t* fraccion);}\\
+    \lstinline{int fraccion\_parte\_entera(fraccion\_t* fraccion);}\\
+    \lstinline{void fraccion\_destruir(fraccion\_t* fraccion);}
+    
+    Nota: considerar que se puede utilizar la función sprintf para generar la representación de la fracción. Por ejemplo: sprintf(buffer, "\%d/\%d", num1, num2).
+    \item Implementar una función que reciba un arreglo de \lstinline{void*} e invierta su orden, utilizando los TDAs vistos. Indicar y justificar el orden de ejecución.
+    \item Implementar en C el TDA ComposiciónFunciones que emula la composición de funciones (i.e. $f(g(h(x)))$. Se debe definir la estructura del TDA, y las siguientes primitivas:
+    \lstinline{composicion\_t* composicion\_crear();}\\
+    \lstinline{void composicion\_destruir(composicion\_t*);}\\
+    \lstinline{bool composicion\_agregar\_funcion(composicion\_t*, double (*f)(double));}\\
+    \lstinline{double composicion\_aplicar(composicion\_t*, double);}
+
+    Considerar que primero se irán agregando las funciones como se leen, pero tener en cuenta el correcto orden de aplicación. Por ejemplo: para emular $f(g(x))$, se debe hacer:
+
+    \lstinline{composicion\_agregar\_funcion(composicion, f);}\\
+    \lstinline{composicion\_agregar\_funcion(composicion, g);}\\
+    \lstinline{composicion\_aplicar(composicion, x);}
+    
+    Indicar el orden de las primitivas.
+\end{enumerate}
+
