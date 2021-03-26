@@ -7,14 +7,13 @@
 \usepackage{imakeidx}
 \usepackage{tikz} % Graphs
 
-\usepackage{listings}
 \usepackage{xcolor}
 \usepackage{fullpage}
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-% \usepackage{graphicx} % Required for including pictures
-% \usepackage[figurename=Figure]{caption}
+\usepackage{graphicx} % Required for including pictures
+\usepackage[figurename=Figure]{caption}
 \usepackage{float}    % For tables and other floats
 \usepackage{verbatim} % For comments and other
 \usepackage{amsmath}  % For math
@@ -23,7 +22,7 @@
 \usepackage{mathrsfs}
 \usepackage{fullpage} % Set margins and place page numbers at bottom center
 % %\usepackage{paralist} % paragraph spacing
-% \usepackage{listings} % For source code
+\usepackage{listings} % For source code
 % \usepackage{subfig}   % For subfigures
 % %\usepackage{physics}  % for simplified dv, and 
 \usepackage{enumitem} % useful for itemization
@@ -33,7 +32,6 @@
 \usepackage{tikz-3dplot}
 \usepackage{circuitikz}
 \usepackage{dsfont}
-% \usepackage{hyperref}
 % \usepackage[T1]{fontenc}
 % \usepackage{multirow}
 
@@ -61,10 +59,10 @@
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
-    tabsize=2
+    tabsize=4
 }
 
-\def\code#1{\texttt{#1}}
+\def\lstinline#1{\texttt{#1}}
 
 %opening
 \title{Notas de Algoritmos y Programación II}
@@ -98,6 +96,10 @@
 
 \section{Algoritmos de Grafos}
 \subfile{sections/graph_algorithms.tex}
+\clearpage
+
+\section{Ejercicios}
+\subfile{sections/exercises.tex}
 \clearpage
 
 \section{Preguntas}

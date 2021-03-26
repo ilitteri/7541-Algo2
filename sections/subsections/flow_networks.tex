@@ -1,0 +1,29 @@
+\documentclass[../main.tex]{subfiles}
+
+\subsubsection{Restricciones}
+\begin{itemize}
+    \item No se aceptan bucles.
+    \item No pueden haber ciclos de dos vértices (aristas antiparalelas).
+    \item Todos los vértices pueden llegar al sumidero de alguna forma.
+    \item Solo hay una fuente.
+    \item Solo hay un sumidero.
+\end{itemize}
+
+\subsubsection{Red Residual}
+
+Es el grafo con los mismos vértices, pero tiene como aristas:
+\begin{enumerate}
+    \item Las mismas del original, al que aún les queda capacidad para utilizar. El peso es esa capacidad restante.
+    \item La arista opuesta, con peso la capacidad utilizada.
+    \item Si alguno ed os anteriores es 0, no hay arista.
+\end{enumerate}
+
+En el peor de los casos el grafo residual tiene el doble de aristas.
+
+Un grafo residual es una red de flujo, salvo por las aristas antiparalelas.
+
+\subsubsection{Camino de aumento (\textit{augmenting path})}
+
+Si encontramos un camino de la fuente (s) al sumidero (t) en el grafo residual, entonces encontramos un camino por el que podemos aumentar el flujo.
+
+Buscamos aumentar el flujo total, pero puede reducirse el que paso por una arista en particular (para el mismo fin).
