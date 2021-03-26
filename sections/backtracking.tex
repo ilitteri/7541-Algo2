@@ -1,0 +1,33 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{itemize}
+    \item Es una técnica de diseño de algoritmos que usamos cuando sabemos que una combinación parcial que ya construimos no va a llevar a un resultado válido \textit{podamos}.
+    \item Esto se puede aplicar a muchos tipos de problemas. Nosotros lo vamos a aplicar sobre Grafos.
+    \item En general (no siempre) van a ser recorridos DFS.
+    \item 
+\end{itemize}
+
+\subsection*{Fuerza Bruta}
+
+Es otra técnica de diseño de algoritmos. Tenemos un problema combinatorio, entonces tenemos que probar todas las soluciones posibles. Ejemplo: tengo un arreglo, y lo quiero ordenar, puedo probar todas las permutaciones posibles y quedarme con la ordenada.
+
+\subsection{Ejemplo 1}
+
+Queremos encontrar si existe un ciclo de largo $n$ en un grafo.
+
+\textit{Planteo de solución:} Vamos acumulando vértices en un camino parcial. Cuando lleguemos a $n$, vemos si el vértice final tiene arista al origen.
+
+\lstinputlisting[language=Python]{algorithms/graphs/backtracking_ciclo_largo_n.py}
+
+\subsection{Ejemplo 2}
+
+Queremos ver si existe una manera de pintar el grafo con $k$ colores, de tal forma que no hayan dos adyacentes con el mismo color:
+
+Nota: si $k = 2$,, es ver si el grafo es bipartito (y se resuelve fácilmente). Con $k = 3$, ya no es sencillo de resolver.
+
+Planteo: vamos vértice por vértice asignando alguno de los colores posibles. Al terminar de asignar vemos si es válida por fuerza bruta.
+
+Poda: podemos darnos cuenta al asignar ya si esa asignación no está siendo válida, y cortar.
+
+
+\lstinputlisting[language=Python]{algorithms/graphs/backtracking_coloreo.py}
