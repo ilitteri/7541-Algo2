@@ -1,0 +1,20 @@
+{
+	"id": 429,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "01 - Altura",
+	"description": "Dado un \u00e1rbol binario, escribir una primitiva recursiva que determine la altura del mismo. Indicar y justificar el orden de la primitiva.",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 1,
+	"file_id": 25403,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stddef.h>\n\nTest(misc, arbol_nulo) {\n    cr_assert(ab_altura(NULL) == 0);\n}\n\nTest(misc, arbol_solo_raiz) {\n    ab_t* ab = ab_crear();\n    cr_assert(ab_altura(ab) == 1);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_solo_un_lado) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->izq->izq = ab_crear();\n    cr_assert(ab_altura(ab) == 4);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_completo) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->der = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->der->izq = ab_crear();\n    ab->der->der = ab_crear();\n    cr_assert(ab_altura(ab) == 3);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_zig_zag) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->izq->der->izq = ab_crear();\n    ab->izq->der->izq->der = ab_crear();\n    cr_assert(ab_altura(ab) == 5);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_diverso) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->der = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->der->der = ab_crear();\n    ab->der->der->izq = ab_crear();\n    cr_assert(ab_altura(ab) == 4);\n    ab_destruir(ab);\n}",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-10-30T20:18:50Z",
+	"last_updated": "2020-11-16T18:59:00Z"
+}

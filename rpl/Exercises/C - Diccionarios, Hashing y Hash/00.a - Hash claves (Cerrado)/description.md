@@ -1,0 +1,2 @@
+Para un hash cerrado, implementar una primitiva `lista_t* hash_claves(const hash_t*)` que reciba un hash y devuelva una lista con sus claves.
+

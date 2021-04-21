@@ -1,0 +1,38 @@
+Los algoritmos de ordenamiento no compara
+
+Counting Sort
+
+    Cuando usar counting sort?
+
+    Cuando los datos estan en un rango conocido de valores.
+    Los elementos deben ser enteros (contables, pueden ser letras).
+
+    [4, 1, 1, 2, 7, 5, 2, 1, 9]
+
+    1) Calculamos el rango de los elementos (max - min).
+    2) Armar un arreglo de min a max --> [3, 2, 0, 1, 1, 0, 1, 0, 1]
+    3) En ese arreglo contamos cuantos elementos hay en cada uno.
+    4) Armar un arreglo de acumulados: con el arreglo de frecuencias 
+    acumulo elementos (arr_acum[i] = arr_frec[i] + arr_acum[i-1]) -> [3, 5, 5, 6, 7, 7, 8, 8, 9]
+    5) Cada posicion del arreglo de acumulados nos indica donde hay que popner el elemento asociado posicion.
+    --> [- , - , - , - , - , 4 , - , - , -]
+        [3, 5, 5, 5, 7, 7, 8, 8, 9]
+    --> [- , - , 1 , - , - , 4 , - , - , -]
+        [2, 5, 5, 5, 7, 7, 8, 8, 9]
+    --> [- , 1 , 1 , - , - , 4 , - , - , -]
+        [1, 5, 5, 5, 7, 7, 8, 8, 9]
+    --> [- , 1 , 1 , 2 , - , 4 , - , - , -]
+        [1, 4, 5, 5, 7, 7, 8, 8, 9]
+    --> [- , 1 , 1 , 2 , - , 4 , - , 7 , -]
+        [1, 4, 5, 5, 7, 7, 7, 8, 9]
+    --> [- , 1 , 1 , 2 , - , 4 , 5 , 7 , -]
+        [1, 4, 5, 5, 6, 7, 7, 8, 9]
+    --> [- , 1 , 1 , 2 , 2 , 4 , 5 , 7 , -]
+        [1, 3, 5, 5, 6, 7, 7, 8, 9]
+    --> [1 , 1 , 1 , 2 , 2 , 4 , 5 , 7 , -]
+        [0, 3, 5, 5, 6, 7, 7, 8, 9]
+    --> [1 , 1 , 1 , 2 , 2 , 4 , 5 , 7 , 9] <--
+        [0, 3, 5, 5, 6, 7, 7, 8, 8]
+
+    Un algoritmo es estable cuando conserva el orden relativo de los elementos.
+    Si recorro al reves el arreglo anterior, mantengo la estabilidad.

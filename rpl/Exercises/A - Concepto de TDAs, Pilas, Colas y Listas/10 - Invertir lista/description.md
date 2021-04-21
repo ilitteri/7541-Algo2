@@ -1,0 +1,1 @@
+Implementar en C una primitiva `void lista_invertir(lista_t* lista)` que invierta la lista recibida por parámetro, sin utilizar estructuras auxiliares. Indicar y justificar el orden de la primitiva.

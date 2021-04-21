@@ -1,0 +1,1 @@
+Dado un árbol binario, escriba una primitiva recursiva que cuente la cantidad de nodos que tienen exactamente dos hijos directos. ¿Qué orden de complejidad tiene la función implementada?

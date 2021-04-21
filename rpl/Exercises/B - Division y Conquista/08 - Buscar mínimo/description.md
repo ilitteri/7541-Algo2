@@ -1,0 +1,1 @@
+Implementar, por división y conquista, una función que determine el mínimo de un arreglo. Indicar y justificar el orden.

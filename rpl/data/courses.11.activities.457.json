@@ -1,0 +1,20 @@
+{
+	"id": 457,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "14 - Reconstrucci\u00f3n (particular)",
+	"description": "Determinar c\u00f3mo es el \u00c1rbol cuyo pre order es EURMAONDVSZT, e in order es MRAUOZSVDNET.",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 4,
+	"file_id": 41706,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stdbool.h>\n#include <stddef.h>\n#include <string.h>\n\nstruct aplicar {\n    lista_t* lista;\n    boolean todo_ok;\n};\n\nbool validar(void* dato, void* extra) {\n    char* letra_actual = dato;\n    struct aplicar* aplicar = extra;\n    if (lista_esta_vacia(aplicar->lista)) {\n        aplicar->todo_ok = false;\n        return false;\n    }\n    char* esperado = lista_borrar_primero(aplicar->lista);\n    if (*esperado != letra_actual) {\n        aplicar->todo_ok = false;\n        return false;\n    } else {\n        return true;\n    }\n}\n\n\nTest(misc, arbol_correcto) {\n    ab_t* ab = arbol_con_recorridos();\n    lista_t* pre = ab_pre_order(ab);\n    lista_t* inor = ab_in_order(ab);\n    const char* esperado_pre = \"EURMAONDVSZT\";\n    const char* esperado_in = \"MRAUOZSVDNET\";\n    struct aplicar ap;\n    ap.lista = lista_crear();\n    ap.todo_ok = true;\n\n    for (size_t i = 0; i < strlen(esperado_pre); i++) {\n        lista_insertar_ultimo(ap.lista, &esperado_pre[i]);\n    }\n\n    lista_iterar(pre, validar, &ap);\n    \n    cr_assert(ap.todo_ok);\n    lista_destruir(ap.lista);\n\n    ap.lista = lista_crear();\n    for (size_t i = 0; i < strlen(esperado_in); i++) {\n        lista_insertar_ultimo(ap.lista, &esperado_in[i]);\n    }\n    ap.todo_ok = true;\n\n    lista_iterar(pre, validar, &ap);\n    cr_assert(ap.todo_ok);\n    lista_destruir(ap.lista);\n\n    lista_destruir(pre, NULL);\n    lista_destruir(inor, NULL);\n    ab_destruir(ab);\n}\n\n",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-11-16T18:50:41Z",
+	"last_updated": "2020-11-23T22:40:57Z"
+}

@@ -1,0 +1,1 @@
+Se tiene un árbol binario de búsqueda con cadenas como claves y función de comparación strcmp. Implementar una primitiva `lista_t* abb_mayores(const abb_t* abb, const char* cadena)` que, dados un ABB y una cadena, devuelva una lista ordenada con las claves del árbol estrictamente mayores a la cadena recibida por parámetro (que no necesariamente está en el árbol).

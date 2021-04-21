@@ -1,0 +1,20 @@
+{
+	"id": 454,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "04 - 2 hijos",
+	"description": "Dado un \u00e1rbol binario, escriba una primitiva recursiva que cuente la cantidad de nodos que tienen exactamente dos hijos directos. \u00bfQu\u00e9 orden de complejidad tiene la funci\u00f3n implementada?",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 2,
+	"file_id": 40851,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stddef.h>\n\nTest(misc, arbol_vacio) {\n    cr_assert(ab_2_hijos(NULL) == 0);\n}\n\nTest(misc, arbol_raiz) {\n    ab_t* ab = ab_crear();\n    cr_assert(ab_2_hijos(ab) == 0);\n    ab_destruir(ab);\n}\n\n\nTest(misc, arbol_completo) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->der = ab_crear();\n    ab->der->izq = ab_crear();\n    ab->der->der = ab_crear();\n    cr_assert(ab_2_hijos(ab) == 3);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_variado) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->izq->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->izq->der->izq = ab_crear();\n    ab->izq->der->der = ab_crear();\n    ab->izq->der->der->izq = ab_crear();\n    cr_assert(ab_2_hijos(ab) == 2);\n    ab_destruir(ab);\n}",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-11-15T23:02:03Z",
+	"last_updated": "2020-11-15T23:08:23Z"
+}

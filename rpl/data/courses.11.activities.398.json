@@ -1,0 +1,20 @@
+{
+	"id": 398,
+	"course_id": 11,
+	"category_id": 75,
+	"category_name": "C - Diccionarios, Hashing y Hash",
+	"category_description": "",
+	"name": "16 - Diccionario con add_all",
+	"description": "Se quiere implementar un TDA Diccionario con las siguientes primitivas: `obtener(x)` devuelve el valor de `x` en el diccionario; `insertar(x, y)` inserta en el diccionario la clave `x` con el valor `y` (entero); `borrar(x)` borra la entrada de `x`; `add(x, n)` le suma `n` al contenido de `x`; `add_all(m)` le suma `m` a todos los valores.\n\nProponer una implementaci\u00f3n donde **todas** las operaciones sean O(1). Justificar el orden de las operaciones.\n\n(En general un ejercicio as\u00ed podr\u00eda plantearse solo describiendo, pero para quienes quierran corroborarlo, en esta plataforma se encuentra definido el ejercicio en C)",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 16,
+	"file_id": 15728,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"dic_all.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n\nTest(misc, test_simple) {\n    dic_all_t* da = dic_all_crear();\n    cr_assert(dic_all_guardar(da, \"Mondi\", 14));\n    cr_assert(dic_all_guardar(da, \"Viena\", 4));\n    cr_assert(dic_all_obtener(da, \"Viena\") == 4);\n    cr_assert(dic_all_obtener(da, \"Mondi\") == 14);\n    dic_all_destruir(da);\n}\n\nTest(misc, test_addall_funciona_con_los_ya_creados) {\n    dic_all_t* da = dic_all_crear();\n    dic_all_guardar(da, \"Mondi\", 14);\n    dic_all_guardar(da, \"Viena\", 4);\n    dic_all_add_all(da, 12);\n    cr_assert(dic_all_obtener(da, \"Viena\") == 16);\n    cr_assert(dic_all_obtener(da, \"Mondi\") == 26);\n    dic_all_destruir(da);\n}\n\nTest(misc, test_agrego_luego_de_addall) {\n    dic_all_t* da = dic_all_crear();\n    dic_all_guardar(da, \"Mondi\", 14);\n    dic_all_add_all(da, 12);\n    dic_all_guardar(da, \"Viena\", 4);\n    cr_assert(dic_all_obtener(da, \"Viena\") == 4);\n    cr_assert(dic_all_obtener(da, \"Mondi\") == 26);\n    dic_all_destruir(da);\n}\n\nTest(misc, test_agrego_luego_de_addall_y_luego_hago_otro_addall) {\n    dic_all_t* da = dic_all_crear();\n    dic_all_guardar(da, \"Mondi\", 14);\n    dic_all_add_all(da, 12);\n    dic_all_guardar(da, \"Viena\", 4);\n    dic_all_add_all(da, 3);\n    cr_assert(dic_all_obtener(da, \"Viena\") == 7);\n    cr_assert(dic_all_obtener(da, \"Mondi\") == 29);\n    dic_all_destruir(da);\n}\n\nTest(misc, test_addall_antes_de_guardar) {\n    dic_all_t* da = dic_all_crear();\n    dic_all_add_all(da, 12);\n    cr_assert(dic_all_guardar(da, \"Mondi\", 14));\n    cr_assert(dic_all_guardar(da, \"Viena\", 4));\n    cr_assert(dic_all_obtener(da, \"Viena\") == 4);\n    cr_assert(dic_all_obtener(da, \"Mondi\") == 14);\n    dic_all_destruir(da);\n}",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-10-19T17:04:38Z",
+	"last_updated": "2020-10-28T16:04:29Z"
+}

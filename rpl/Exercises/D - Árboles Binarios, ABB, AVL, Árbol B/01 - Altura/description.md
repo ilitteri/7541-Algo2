@@ -1,0 +1,1 @@
+Dado un árbol binario, escribir una primitiva recursiva que determine la altura del mismo. Indicar y justificar el orden de la primitiva.

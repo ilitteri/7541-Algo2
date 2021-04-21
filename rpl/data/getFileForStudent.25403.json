@@ -1,0 +1,5 @@
+{
+	"main.c": "#include \"ab.h\"\n\nsize_t ab_altura(const ab_t* ab) {\n    return 0;\n}",
+	"ab.h": "#ifndef AB_H\n#define AB_H\n\n#include <stddef.h>\n\ntypedef struct ab ab_t;\n\nstruct ab {\n    ab_t* izq;\n    ab_t* der;\n    void* dato;\n};\n\nab_t* ab_crear();\n\n// A implementar\nsize_t ab_altura(const ab_t* ab);\n\nvoid ab_destruir(ab_t* ab);\n\n#endif",
+	"files_metadata": "{\"main.c\":{\"display\":\"read_write\"},\"ab.h\":{\"display\":\"read\"},\"ab.c\":{\"display\":\"hidden\"}}"
+}

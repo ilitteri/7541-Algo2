@@ -1,0 +1,20 @@
+{
+	"id": 476,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "12 - Reconstrucci\u00f3n (Funci\u00f3n)",
+	"description": "Implementar una primitiva para el AB que reciba dos arreglos (o listas) de cadenas. El primer arreglo corresponde al preorder de un \u00e1rbol binario. El segundo al inorder del mismo \u00e1rbol (ambos arreglos tienen los mismos elementos, sin repetidos). La funci\u00f3n debe devolver un \u00e1rbol binario que tenga dicho preorder e inorder. Indicar y justificar el orden de la primitiva (tener cuidado con este punto). Considerar que la estructura del \u00e1rbol binario es:\n\n```cpp\n    typedef struct arbol {\n        struct arbol* izq;\n        struct arbol* der;\n        char* dato;\n    } ab_t;\n```\n",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 8,
+	"file_id": 47004,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"api.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n\n#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stdbool.h>\n#include <stddef.h>\n#include <string.h>\n\nstruct aplicar {\n    lista_t* lista;\n    boolean todo_ok;\n};\n\nbool validar(void* dato, void* extra) {\n    char* letra_actual = dato;\n    struct aplicar* aplicar = extra;\n    if (lista_esta_vacia(aplicar->lista)) {\n        aplicar->todo_ok = false;\n        return false;\n    }\n    char* esperado = lista_borrar_primero(aplicar->lista);\n    if (*esperado != letra_actual) {\n        aplicar->todo_ok = false;\n        return false;\n    } else {\n        return true;\n    }\n}\n\n\nvoid test_validar(const char* esperado_pre, const char* esperado_in) {\n    ab_t* ab = ab_reconstruir(esperado_pre, esperado_in);\n    lista_t* pre = ab_pre_order(ab);\n    lista_t* inor = ab_in_order(ab);\n    struct aplicar ap;\n    ap.lista = lista_crear();\n    ap.todo_ok = true;\n\n    for (size_t i = 0; i < strlen(esperado_pre); i++) {\n        lista_insertar_ultimo(ap.lista, &esperado_pre[i]);\n    }\n\n    lista_iterar(pre, validar, &ap);\n    \n    cr_assert(ap.todo_ok);\n    lista_destruir(ap.lista);\n\n    ap.lista = lista_crear();\n    for (size_t i = 0; i < strlen(esperado_in); i++) {\n        lista_insertar_ultimo(ap.lista, &esperado_in[i]);\n    }\n    ap.todo_ok = true;\n\n    lista_iterar(pre, validar, &ap);\n    cr_assert(ap.todo_ok);\n    lista_destruir(ap.lista);\n\n    lista_destruir(pre, NULL);\n    lista_destruir(inor, NULL);\n    ab_destruir(ab);\n}\n\nTest(misc, vacio) {\n    test_validar(\"\", \"\");\n}\n\nTest(misc, pocos_elementos) {\n    test_validar(\"BAC\", \"ABC\");\n}\n\nTest(misc, lista) {\n    test_validar(\"ABCDEFGH\", \"ABCDEFGH\");\n}\n\nTest(misc, completo) {\n    test_validar(\"DCABFEG\", \"ABCDEFG\");\n}\n\nTest(misc, variado) {\n    test_validar(\"EURMAONDVSZT\", \"MRAUOZSVDNET\");\n}\n\nTest(misc, variado2) {\n    test_validar(\"DBACHTLKYXZ\", \"ABCDHKLTXYZ\");\n}\n\n\n",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-11-23T22:33:55Z",
+	"last_updated": "2020-11-23T22:40:43Z"
+}

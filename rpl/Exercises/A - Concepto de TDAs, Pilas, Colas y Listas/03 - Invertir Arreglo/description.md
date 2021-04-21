@@ -1,0 +1,1 @@
+Implementar una función que reciba un arreglo de `void*` e invierta su orden, utilizando los TDAs vistos. Indicar y justificar el orden de ejecución.

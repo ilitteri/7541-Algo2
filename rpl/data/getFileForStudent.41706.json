@@ -1,0 +1,5 @@
+{
+	"main.c": "#include \"ab.h\"\n\n// pre order: EURMAONDVSZT\n// in order: MRAUOZSVDNET\n\nab_t* arbol_con_recorridos() {\n    return NULL;\n}",
+	"ab.h": "#ifndef AB_H\n#define AB_H\n\n#include <stddef.h>\n#include \"lista.h\"\n\ntypedef struct ab ab_t;\n\nstruct ab {\n    ab_t* izq;\n    ab_t* der;\n    char dato;\n};\n\nab_t* ab_crear(char dato);\n\n// A implementar\nab_t* arbol_con_recorridos();\n\nvoid ab_destruir(ab_t* ab);\n\n// para las pruebas\nlista_t* ab_pre_order(const ab_t* ab);\nlista_t* ab_in_order(const ab_t* ab);\n\n#endif",
+	"files_metadata": "{\"main.c\":{\"display\":\"read_write\"},\"ab.h\":{\"display\":\"read\"},\"ab.c\":{\"display\":\"hidden\"},\"lista.h\":{\"display\":\"hidden\"},\"lista.c\":{\"display\":\"hidden\"}}"
+}

@@ -1,0 +1,5 @@
+{
+	"main.c": "#include \"main.h\"\n#incldue \"ab.h\"\n#include <stddef.h>\n\nab_t* ab_reconstruir(const char* preorder, const char* inorder) {\n    // TODO\n    return NULL;\n}",
+	"ab.h": "#ifndef AB_H\n#define AB_H\n\n#include <stddef.h>\n#include \"lista.h\"\n\ntypedef struct ab ab_t;\n\nstruct ab {\n    ab_t* izq;\n    ab_t* der;\n    char dato;\n};\n\nab_t* ab_crear(char dato);\n\nvoid ab_destruir(ab_t* ab);\n\n// Validaciones (Tests)\nlista_t* pre_order(const ab_t* ab);\nlista_t* in_order(const ab_t* ab);\n\n#endif",
+	"files_metadata": "{\"main.c\":{\"display\":\"read_write\"},\"ab.h\":{\"display\":\"read\"},\"main.h\":{\"display\":\"hidden\"},\"ab.c\":{\"display\":\"hidden\"}}"
+}

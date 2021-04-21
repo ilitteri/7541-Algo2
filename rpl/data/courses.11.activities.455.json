@@ -1,0 +1,20 @@
+{
+	"id": 455,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "05 - Invertir",
+	"description": "Escribir una primitiva con la firma `void ab_invertir(ab_t* arbol)` que invierta el \u00e1rbol binario pasado por par\u00e1metro, de manera tal que los hijos izquierdos de cada nodo se conviertan en hijos derechos.\n\nLa estructura arbol_t respeta la siguiente definici\u00f3n:\n\n```c\n    typedef struct ab {\n        struct ab* izq;\n        struct ab* der;\n        int dato;\n    } ab_t;\n```\n\nIndicar el orden de complejidad de la funci\u00f3n implementada.",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 2,
+	"file_id": 40861,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stddef.h>\n\nTest(misc, arbol_raiz) {\n    ab_t* ab = ab_crear(5);\n    ab_invertir(ab);\n    cr_assert(ab->dato == 5);\n    cr_assert(ab->izq == NULL && ab->der == NULL);\n    ab_destruir(ab);\n}\n\n\nTest(misc, arbol_completo) {\n    ab_t* ab = ab_crear(5);\n    ab->izq = ab_crear(7);\n    ab->izq->izq = ab_crear(-3);\n    ab->izq->der = ab_crear(19);\n    ab->der = ab_crear(11);\n    ab->der->izq = ab_crear(0);\n    ab->der->der = ab_crear(-13);\n\n    ab_invertir(ab);\n\n    cr_assert(ab->dato == 5);\n    cr_assert(ab->der->dato == 7);\n    cr_assert(ab->der->der->dato == -3);\n    cr_assert(ab->der->izq->dato == 19);\n    cr_assert(ab->izq->dato == 11);\n    cr_assert(ab->izq->der->dato == 0);\n    cr_assert(ab->izq->izq->dato == -13);\n\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_variado) {\n    ab_t* ab = ab_crear(5);\n    ab->izq = ab_crear(7);\n    ab->izq->izq = ab_crear(-3);\n    ab->izq->izq->izq = ab_crear(19);\n    ab->der = ab_crear(11);\n    ab->der->izq = ab_crear(0);\n    ab->der->der = ab_crear(-13);\n    ab->der->der->izq = ab_crear(6);\n\n    ab_invertir(ab);\n\n    cr_assert(ab->dato == 5);\n    cr_assert(ab->der->dato == 7);\n    cr_assert(ab->der->der->dato == -3);\n    cr_assert(ab->der->der->der->dato == 19);\n    cr_assert(ab->izq->dato == 11);\n    cr_assert(ab->izq->der->dato == 0);\n    cr_assert(ab->izq->izq->dato == -13);\n    cr_assert(ab->izq->izq->der->dato == 6);\n\n    ab_destruir(ab);\n}",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-11-15T23:11:39Z",
+	"last_updated": "2020-11-15T23:21:15Z"
+}

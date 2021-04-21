@@ -1,0 +1,20 @@
+{
+	"id": 456,
+	"course_id": 11,
+	"category_id": 76,
+	"category_name": "D - \u00c1rboles Binarios, ABB, AVL, \u00c1rbol B",
+	"category_description": "",
+	"name": "09 - Quiebres",
+	"description": "Definimos como quiebre en un \u00e1rbol binario cuando ocurre que:\n* un hijo derecho tiene un solo hijo, y es el izquierdo\n* un hijo izquierdo tiene un solo hijo, y es el derecho\n\nImplementar una primitiva para el \u00e1rbol binario size_t ab_quiebres(const ab_t*) que, dado un \u00e1rbol binario, nos devuelva la cantidad de quiebres que tiene. La primitiva no debe modificar el \u00e1rbol.",
+	"language": "c",
+	"is_iotested": false,
+	"active": true,
+	"deleted": false,
+	"points": 4,
+	"file_id": 40879,
+	"activity_unit_tests": "#include <criterion/criterion.h>  // No borrar esto!\n#include \"ab.h\"  // Modificar con el nombre de la api que se le entrega al alumno!\n#include <stddef.h>\n\nTest(misc, arbol_vacio) {\n    cr_assert(ab_quiebres(NULL) == 0);\n}\n\nTest(misc, arbol_raiz) {\n    ab_t* ab = ab_crear();\n    cr_assert(ab_quiebres(ab) == 0);\n    ab_destruir(ab);\n}\n\n\nTest(misc, arbol_completo) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->der = ab_crear();\n    ab->der->izq = ab_crear();\n    ab->der->der = ab_crear();\n    cr_assert(ab_quiebres(ab) == 0);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_V_invertida) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->der = ab_crear();\n    ab->der->der = ab_crear();\n    cr_assert(ab_quiebres(ab) == 0);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_dos_quiebres) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->der = ab_crear();\n    ab->der->izq = ab_crear();\n    cr_assert(ab_quiebres(ab) == 2);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_variado) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->izq = ab_crear();\n    ab->izq->izq->der = ab_crear();\n    ab->der = ab_crear();\n    ab->der->izq = ab_crear();\n    ab->der->der = ab_crear();\n    ab->der->der->izq = ab_crear();\n    cr_assert(ab_quiebres(ab) == 2);\n    ab_destruir(ab);\n}\n\nTest(misc, arbol_zig_zag) {\n    ab_t* ab = ab_crear();\n    ab->izq = ab_crear();\n    ab->izq->der = ab_crear();\n    ab->izq->der->izq = ab_crear();\n    ab->izq->der->izq->der = ab_crear();\n    ab->izq->der->izq->der->izq = ab_crear();\n    ab->izq->der->izq->der->izq->der = ab_crear();\n\n    ab->izq->der->izq->der->izq->der->izq = ab_crear();\n    ab->izq->der->izq->der->izq->der->der = ab_crear();\n    cr_assert(ab_quiebres(ab) == 5);\n    ab_destruir(ab);\n}\n\n",
+	"compilation_flags": "-g -O2 -std=c99 -Wall -Wformat=2 -Wshadow -Wpointer-arith -Wunreachable-code -Wconversion -Wno-sign-conversion -Wbad-function-cast",
+	"activity_iotests": [],
+	"date_created": "2020-11-15T23:24:47Z",
+	"last_updated": "2020-11-15T23:39:33Z"
+}
