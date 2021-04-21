@@ -1,0 +1,39 @@
+Este problema con la informacion que poseo lo puedo modelar de la siguiente 
+manera:
+
+- Utilizando un grafo no dirigido, sin peso, compuesto (2 aristas admitidas 
+por vertice en este caso), y que no admite lazos,
+- Cuyos vertices son los colectivos,
+- Y cuyas aristas son las paradas.
+- El objetivo seria verificar que el grafo es bipartito, ya que, al haber 2
+colores de colectivos (vertices), es valido verificar que el grafo tenga dicha
+condicion.
+- La complejidad de este algoritmo seria O(V + E) donde V: colectivos, y
+E: aristas, como se menciono antes, ya que usaria un recorrido BFS.
+- Seguimiento: primero se asigna los colores a los colectivos a medida que
+se recorre el grafo, si existe un caso en el que las paradas unen a dos
+colectivos del mismo color, se descartaria esa configuracion, sino, todo
+se asigna correctamente, significando que esa configuracion cumple con lo
+solicitado.
+
+- Aproximacion:
+
+colores = {"Rojo": True, "Azul": False}
+
+def es_bipartito(grafo):
+    if len(grafo) == 0:
+        return True
+    color = {v:None for v in grafo}
+    v_random = grafo.vertice_aleatorio()
+    color[v_random] = colores["Rojo"]
+    q = []
+    q.append(v_random)
+    while q:
+        v = q.pop(0)
+        for w in grafo.adyacentes(v):
+            if color[v] == color[w]:
+                return False
+            if color[w] == None:
+                color[w] = not color[v]
+                q.append(w)
+    return True

@@ -1,0 +1,314 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\title{Recuperatorio Parcialito N°4}
+\author{Ivan Litteri - 106223}
+\date{08/03/2021}
+
+\lstset{style=mystyle}
+\begin{document}
+\maketitle
+
+\lstset{language=Python}
+
+\section*{Ejercicio 1}
+
+\subsection*{Consigna}
+
+\begin{enumerate}[label=\alph*)]
+    \item Aplicar el algoritmo de Prim al siguiente grafo, empezando por el vértice E (grafo no dibujado por tiempo).
+    \item Si los pesos de un grafo son todos diferentes, ¿obtendríamos siempre el mismo árbol de tendido mínimo aplicando el
+    Algoritmo de Prim?.
+\end{enumerate}
+
+\subsection*{Resolución}
+
+El algoritmo de Prim resumido es:
+\begin{enumerate}
+    \item Empezar por un vértice aleatorio.
+    \item Encolar todas las aristas (cuyo destino no esté visitado) en el heap.
+    \item Desencolar el heap (la función de comparación usa el peso de la arista).
+    \item Repetir paso $2)$.
+\end{enumerate}
+
+\begin{enumerate}[label=\alph*)]
+    \item
+        \begin{itemize}
+            Comenzando por el vértice $E$ del grafo.
+            \item En el heap encolo sus adyacentes en el heap y actualizo visitados:
+                \begin{equation*}
+                    Heap = [(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{E\}
+                \end{equation*}
+            \item Desencolo del heap a $(E-A, 2)$. $A$ no está visitado entones actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(E-G, 3), (E-C, 3), (E-I, 3)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2)\}
+                \end{equation*}
+            \item Miro los adyacentes de $A$ no visitados y los agrego al heap:
+                \begin{equation*}
+                    Heap = [(E-G, 3), (E-C, 3), (E-I, 3), (A-B, 5), (A-C, 7), (A-F, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A\}
+                \end{equation*}
+            \item Desencolo del heap, hay 3 posibilidades, supongo que sale $(E-G, 3)$. $G$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(E-C, 3), (E-I, 3), (A-B, 5), (A-C, 7), (A-F, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3)\}
+                \end{equation*}
+            \item Miro los adyacentes de $G$, y como están todos visitados, no cambio nada.
+            \item Desencolo del heap, hay 2 posibilidades, supongo que sale $(E-C, 3)$. $C$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(E-I, 3), (A-B, 5), (A-C, 7), (A-F, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3)\}
+                \end{equation*}
+            \item Miro los adyacentes de $C$ no visitados y los agrego al heap:
+                \begin{equation*}
+                    Heap = [(E-I, 3), (C-H, 3), (A-B, 5), (A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C\}
+                \end{equation*}
+            \item Desencolo del heap, hay 2 posibilidades, supongo que sale $(E-I, 3)$. $I$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(C-H, 3), (A-B, 5), (A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3)\}
+                \end{equation*}
+            \item Miro los adyacentes de $I$, y como están todos visitados, no cambio nada.
+            \item Desencolo del heap sale $(C-H, 3)$. $H$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(A-B, 5), (A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3)\}
+                \end{equation*}
+            \item Miro los adyacentes de $H$, y como están todos visitados, no cambio nada.
+            \item Desencolo del heap sale $(A-B, 5)$. $B$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5)\}
+                \end{equation*}
+            \item Miro los adyacentes de $B$ y agrego a los vértices cuyo destino no este visitado:
+                \begin{equation*}
+                    Heap = [(B-F, 1), (A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B\}
+                \end{equation*}
+            \item Desencolo del heap sale $(B-F, 1)$. $F$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1)\}
+                \end{equation*}
+            \item Miro los adyacentes de $F$ y agrego a los vértices no visitados:
+                \begin{equation*}
+                    Heap = [(F-D, 6), (A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F\}
+                \end{equation*}
+            \item Desencolo del heap sale $(F-D, 6)$. $D$ no está visitado entonces actualizo visitados y lo agrego a la solución:
+                \begin{equation*}
+                    Heap = [(A-C, 7), (A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F, D\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1), (F-D, 6)\}
+                \end{equation*}
+            \item Miro los adyacentes de $D$, ya están todos visitados entonces no hago nada.
+            \item Desencolo del heap $(A-C, 7)$, ambos visitados entonces no hago nada.
+                \begin{equation*}
+                    Heap = [(A-F, 8), (C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F, D\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1), (F-D, 6)\}
+                \end{equation*}
+            \item Desencolo del heap $(A-F, 8)$, ambos visitados entonces no hago nada.
+                \begin{equation*}
+                    Heap = [(C-D, 8)]
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F, D\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1), (F-D, 6)\}
+                \end{equation*}
+            \item Desencolo del heap $(C-D, 8)$, ambos visitados entonces no hago nada.
+                \begin{equation*}
+                    Heap = []
+                \end{equation*}
+                \begin{equation*}
+                    Visitados = \{E, A, G, C, I, H, B, F, D\}
+                \end{equation*}
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1), (F-D, 6)\}
+                \end{equation*}
+            \item Destruyo el heap, y me quedó el MST:
+                \begin{equation*}
+                    T = \{(E-A, 2), (E-G, 3), (E-C, 3), (E-I, 3), (C-H, 3), (A-B, 5), (B-F, 1), (F-D, 6)\}
+                \end{equation*}
+        \end{itemize}
+    \item Si los pesos de un grafo son todos diferentes, obtendríamos siempre el mismo árbol de tendido mínimo aplicando el Algoritmo de Prim, porque se irían desencolando y agregando al MST siempre en el mismo orden, generando el mismo MST siempre.
+\end{enumerate}
+
+\section*{Ejercicio 2}
+
+\subsection*{Consigna}
+
+Implementar un algoritmo que reciba un grafo, un vértice v y otro w, y determine (utilizando backtracking) la cantidad
+de caminos diferentes que hay desde v a w.
+
+\subsection*{Resolución}
+
+\begin{lstlisting}[frame=single]
+def _todos_los_caminos(grafo, v, w, visitados, camino, caminos) -> None:
+    # Si se visitan todos, termino la busqueda de caminos
+    if len(visitados) == len(grafo):
+        return
+
+    visitados[v]= True
+    camino.append(v) 
+
+    # Si el inicio es igual al fin, agrego un camino.
+    if v == w: 
+        caminos.append(camino)
+    # Sino visito los adyacentes.
+    else:
+        for x in grafo.adyacentes[v]: 
+            if x not in visitados[x]: 
+                _todos_los_caminos(grafo, x, w, visitados, camino, caminos)
+
+    # Vuelvo para atras para ver si encuentro otro camino.
+    camino.pop() 
+    visitados.pop(v)
+
+def todos_los_caminos(grafo, v, w) -> int:
+    caminos =  []
+    _todos_los_caminos(grafo, v, w, {}, [], caminos)
+    return len(caminos)
+\end{lstlisting}
+
+\section*{Ejercicio 3}
+
+\subsection*{Consigna}
+Dado un grafo no dirigido y pesado (todos pesos positivos), se desea averiguar el camino mínimo de un vértice v hacia todos
+los demás vértices del grafo. Se desea saber cuántos caminos mínimos hay hacia cada vértice (considerando que pueden
+haber varios caminos de mismo peso para llegar a un determinado vértice). Explicar cómo modificarías el algoritmo de
+Dijkstra para que, además de las representaciones de padres (para reconstruir caminos) y distancias, obtenga la cantidad de
+caminos mínimos de cada vértice (definimos que para el origen esa cantidad es 0). La complejidad del algoritmo debería
+quedar tal cual el algoritmo original. Justificar la complejidad del nuevo algoritmo. Para el siguiente grafo, la cantidad de
+caminos mínimos desde $A$ son: $\{A: 0, B: 1, C: 1, F: 2, E: 1, D: 3\}$
+
+\subsection*{Resolución}
+\begin{lstlisting}[frame=single]
+def camino_minimo(grafo, origen):
+    dist = {}
+    padre = {}
+    cant_caminos_minimos = {} # Agregado
+    for v in grafo:
+        distancia[v] = infinito
+        cant_caminos_minimos[v] = 0 # Agregado
+    dist[origen] = 0
+    padre[origen] = None
+    q = Heap()
+    q.encolar(origen, 0)
+    while not q.esta_vacia():
+        v = q.desencolar()
+        for w in grafo.adyacentes(v):
+            # Si empata la distancia incrementa en uno la cantidad.
+            if dist[v] + grafo.peso_union(v, w) == dist[w]:
+                cant_caminos_minimos[w] += 1 # Agregado
+            # Cuando encuentro un mejor camino, simplemente actualizo la cantidad a 1.
+            if dist[v] + grafo.peso_union(v, w) < dist[w]:
+                dist[w] = dist[v] + grafo.peso_union(v, w)
+                cant_caminos_minimos[w] = 1 # Agregado
+                padre[w] = v
+                q.encolar(w, dist[w])
+    # Agrego que devuelta la cantidad de caminos minimos.
+    return padre, distancia, cant_caminos_minimos # Agregado
+
+''' Complejidad
+    La complejidad se mantiene, siendo esta O(E log V) ya que solo agrego operaciones constantes.
+'''
+''' Modificacion
+    Agrego un diccionario con cada vertice con camino minimo inicial en 0 (el origne va a quedar en 0). Cuando encuentro un camino que sea igual de bueno que el que ya tenia como minimo, incremento en 1 la cantidad de caminos minimos al vertice de esa iteracion. Si encuentra un camino mas largo no hace nada, y si encuentra un camino mejor pone en uno la cantidad.
+'''
+\end{lstlisting}
+
+\end{document}

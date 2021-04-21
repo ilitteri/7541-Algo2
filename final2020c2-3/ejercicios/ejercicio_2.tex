@@ -1,0 +1,14 @@
+\documentclass[../../main.tex]{subfiles}
+
+
+
+
+
+\subsection{Resolución}
+
+\begin{enumerate}[label=\alph*)]
+    \item La complejidad es $\Theta(n^{2})$ porque vemos un elemento y los comparamos con todos los demás, este recorrido en lista enlazada tiene esta complejidad.
+    \item Utilizaría una estructura \lstinline{hash}, hacer las comparaciones en rango (como en el punto a), costaría menos, ya que, si bien se recorre el diccionario, no tengo que ver los números repetidos. Entonces la complejidad es $< \Theta(n^{2})$. Para lograr esto, en vez de guardar las cosas en una lista las guardo en el hash.
+    \item Si $k$ crece mucho, entonces usaría una búsqueda binaria, desde la mitad de $k$.
+    \item 
+\end{enumerate}
