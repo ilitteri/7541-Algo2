@@ -1,0 +1,460 @@
+==54171== Memcheck, a memory error detector
+==54171== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==54171== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==54171== Command: ./pruebas
+==54171== 
+INICIO DE PRUEBAS DE LISTA VACIA
+La lista esta vacia (es true)... OK
+Inserto un elemento...... OK
+La lista esta vacia (es false)... OK
+Borro el elemento insertado...... OK
+La lista esta nuevamente vacia (es true)... OK
+Destruyo la lista... OK
+INICIO PRUEBAS UNITARIAS
+La lista esta vacia (es true)... OK
+El largo de la lista es 0... OK
+Inserto un elemento desde el principio... OK
+El elemento insertado es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Borro el elemento del principio...... OK
+El largo de la lista es 0... OK
+La lista esta vacia... OK
+Inserto un elemento desde el final... OK
+El elemento insertado es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Borro el elemento del principio...... OK
+El largo de la lista es 0... OK
+La lista esta vacia... OK
+Inserto valor0 desde el principio... OK
+El elemento insertado es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Inserto valor1 desde el principio... OK
+Valor1 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 2... OK
+Inserto valor2 desde el principio... OK
+Valor2 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 3... OK
+Inserto valor3 desde el principio... OK
+Valor3 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 4... OK
+Inserto valor4 desde el principio... OK
+Valor4 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 5... OK
+Borro un elemento desde el principio... OK
+Valor3 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 4... OK
+Borro un elemento desde el principio... OK
+Valor2 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 3... OK
+Borro un elemento desde el principio... OK
+Valor1 es el primer elemento... OK
+Valor0 es el ultimo elemento... OK
+El largo de la lista es 2... OK
+Borro un elemento desde el principio... OK
+Valor0 es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Borro un elemento desde el principio... OK
+La lista esta vacia... OK
+El largo de la lista es 0... OK
+Inserto valor0 desde el final... OK
+El elemento insertado es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Inserto valor1 desde el final... OK
+Valor1 es el ultimo elemento... OK
+Valor0 es el primero... OK
+El largo de la lista es 2... OK
+Inserto valor2 desde el final... OK
+Valor2 es el ultimo elemento... OK
+Valor0 es el primero... OK
+El largo de la lista es 3... OK
+Inserto valor3 desde el final... OK
+Valor3 es el ultimo elemento... OK
+Valor0 es el primero... OK
+El largo de la lista es 4... OK
+Inserto valor4 desde el final... OK
+Valor4 es el ultimo elemento... OK
+Valor0 es el primero... OK
+El largo de la lista es 5... OK
+Borro un elemento desde el principio... OK
+Valor4 es el ultimo elemento... OK
+Valor1 es el primero... OK
+El largo de la lista es 4... OK
+Borro un elemento desde el principio... OK
+Valor4 es el ultimo elemento... OK
+Valor2 es el primero... OK
+El largo de la lista es 3... OK
+Borro un elemento desde el principio... OK
+Valor4 es el ultimo elemento... OK
+Valor3 es el primero... OK
+El largo de la lista es 2... OK
+Borro un elemento desde el principio... OK
+Valor4 es el primero y el ultimo... OK
+El largo de la lista es 1... OK
+Borro un elemento desde el principio... OK
+La lista esta vacia... OK
+El largo de la lista es 0... OK
+Destruyo la lista... OK
+INICIO PRUEBAS DE ARRAYS
+La lista no esta vacia (es false)... OK
+Cargo el string en la lista... OK
+El primer y ultimo elemento agregado no es '\0'... OK
+El arreglo quedo al reves... OK
+Borro el string... OK
+Cargo el string en la lista... OK
+El primer y ultimo elemento agregado no es '\0'... OK
+El arreglo quedo en orden... OK
+Borro el string... OK
+Destruyo la lista... OK
+INICIO PRUEBAS DE CASOS DE NULL
+La lista esta vacia (es true)... OK
+Borro el primero en lista vacia (es NULL)... OK
+Veo el primero lista vacia (es NULL)... OK
+Inserto NULL al principio... OK
+NULL es el primero y el ultimo... OK
+La lista no esta vacia (es true)... OK
+Borro el primero lista (es NULL)... OK
+La lista esta vacia... OK
+Inserto NULL al final... OK
+NULL es el primero y el ultimo... OK
+La lista no esta vacia (es true)... OK
+Borro el primero lista (es NULL)... OK
+La lista esta vacia... OK
+Destruyo la lista... OK
+Agrego un NULL... OK
+Destruyo la lista con un dato NULL... OK
+INICIO PRUEBAS CON ITERADOR EXTERNO
+La lista esta vacia... OK
+El iterador esta en el principio de la lista... OK
+El iterador esta en el final... OK
+Inserto vec[0]... OK
+vec[0] es el primer elemento de la lista... OK
+El iterador apunta a vec[0]... OK
+Inserto vec[1]... OK
+vec[1] es el primer elemento de la lista... OK
+El iterador apunta a vec[1]... OK
+Inserto vec[2]... OK
+vec[2] es el primer elemento de la lista... OK
+El iterador apunta a vec[2]... OK
+Inserto vec[3]... OK
+vec[3] es el primer elemento de la lista... OK
+El iterador apunta a vec[3]... OK
+Inserto vec[4]... OK
+vec[4] es el primer elemento de la lista... OK
+El iterador apunta a vec[4]... OK
+El largo de la lista es 5... OK
+Avanzo el iterador0... OK
+Avanzo el iterador0... OK
+Avanzo el iterador0... OK
+Avanzo el iterador0... OK
+Avanzo el iterador0... OK
+El iterador0 esta al final de la lista... OK
+Inserto un elemento en el final y efectivamente esta en el ultimo lugar... OK
+Destruyo el iterador... OK
+Elimino el primer elemento de la lista... OK
+El iterador apunta al nuevo primero de la lista... OK
+La lista no esta vacia... OK
+El iterador esta en el principio de la lista... OK
+El iterador no esta en el final... OK
+Avanzo el iterador hasta la mitad de la lista... OK
+Inserto un elemento en el medio de la lista... OK
+Destruyo el iterador... OK
+Avanzo el iterador hasta la mitad de la lista... OK
+El elemento insertado anteriormente se inserto efectivamente en el medio... OK
+El largo de la lista es 6... OK
+Borro el elemento del medio... OK
+El largo de la lista es 5... OK
+El iterador esta en el ultimo elemento de la lista... OK
+Elimino el ultimo elemento de la lista... OK
+Hay 4 elementos en la lista... OK
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C7E9: pruebas_iterador_externo (pruebas_lista.c:403)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+El iterador ahora apunta al final de la lista y el ultimo valor de la lista cambio... OK
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C831: pruebas_iterador_externo (pruebas_lista.c:404)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+Valor0 ya no es el ultimo elemento de la lista... OK
+Destruyo el iterador2... OK
+Creo el iterador3... OK
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C91D: pruebas_iterador_externo (pruebas_lista.c:416)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+El elemento del medio ya no forma parte de la lista... OK
+Destruyo el iterador3... OK
+Destruyo la lista... OK
+Creo una lista... OK
+Inserto varios elementos... OK
+Itero con la funcion visitar que suma los numeros... OK
+Sumo todos los elementos de la lista... OK
+Itero con la funcion visitar que suma los numeros pares... OK
+Sumo todos los elementos de la lista... OK
+Itero con la funcion visitar en NULL (no deberia pasar nada)... OK
+No pasa nada... OK
+Destruyo la lista... OK
+INICIO PRUEBAS DE CASOS BORDE
+La lista esta vacia... OK
+No puedo eliminar el primer elemento de una lista vacia... OK
+La lista sigue vacia... OK
+Iterar una lista vacia no hace nada... OK
+Inserto un elemeto con la lista (al principio)... OK
+La lista tiene un elemento... OK
+El primer elemento de la lista es vec[0]... OK
+El ultimo elemento de la lista es vec[0]... OK
+Borro el primer elemento... OK
+No puedo borrar otro elemento... OK
+La lista esta vacia... OK
+No puedo eliminar el primer elemento de una lista vacia... OK
+La lista sigue vacia... OK
+Inserto un elemeto con la lista (al final)... OK
+La lista tiene un elemento... OK
+El primer elemento de la lista es vec[0]... OK
+El ultimo elemento de la lista es vec[0]... OK
+Borro el primer elemento... OK
+No puedo borrar otro elemento... OK
+La lista esta vacia... OK
+No puedo eliminar el primer elemento de una lista vacia... OK
+La lista sigue vacia... OK
+Inserto vec[0] con la lista (al principio)... OK
+Vec[0] es el primer y ultimo elemento... OK
+Inserto vec[1] con la lista (al final)... OK
+Vec[1] no es el primer y si el ultimo elemento... OK
+Inserto vec[2] con la lista (al principio)... OK
+Vec[2] es el primer y no el ultimo elemento... OK
+Inserto vec[3] con la lista (al final)... OK
+Vec[3] no es el primer y si el ultimo elemento... OK
+Inserto vec[4] con la lista (al principio)... OK
+Vec[4] es el primer y no el ultimo elemento... OK
+Destruyo la lista con elementos... OK
+El iterador apunta al primero de la lista... OK
+El iterador apunta al ultimo de la lista... OK
+El iterador esta al final de la lista... OK
+No puedo avanzar sobre una lista vacia... OK
+No puedo borrar un elemento de una lista vacia... OK
+Inserto un primer elemento en una lista vacia... OK
+La lista tiene un elemento... OK
+El primer elemento de la lista es vec[0]... OK
+El ultimo elemento de la lista es vec[0]... OK
+El iterador ya no esta al final... OK
+Inserto un elemento desde el principio de la lista... OK
+La lista tiene 2 elementos... OK
+vec[1] esta en el principio de la lista y no al final... OK
+vec[0] es el ultimo... OK
+Inserto un elemento desde el principio de la lista... OK
+La lista tiene 3 elementos... OK
+vec[2] esta en el principio de la lista y no al final... OK
+vec[0] es el ultimo... OK
+Elimino vec[2]... OK
+La lista tiene 2 elementos... OK
+vec[1] esta en el principio de la lista y no al final... OK
+vec[0] es el ultimo... OK
+Estoy viendo el final de la lista... OK
+Inserto un elemento desde el final de la lista... OK
+La lista tiene 3 elementos... OK
+vec[2] esta en el final de la lista y no al principio... OK
+vec[0] no es el ultimo... OK
+Elimino vec[2]... OK
+La lista tiene 2 elementos... OK
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10DE4D: pruebas_condiciones_borde (pruebas_lista.c:578)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a611e8 is 8 bytes after a block of size 16 alloc'd
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10D665: pruebas_condiciones_borde (pruebas_lista.c:541)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+vec[1] esta en el principio de la lista y no al final... OK
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10DE99: pruebas_condiciones_borde (pruebas_lista.c:579)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a611e8 is 8 bytes after a block of size 16 alloc'd
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10D665: pruebas_condiciones_borde (pruebas_lista.c:541)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+vec[0] es el ultimo: ERROR
+pruebas_lista.c:579: lista_ver_ultimo(lista1) == &vec[0]
+El iterador apunta al primero de la lista... OK
+El iterador apunta al ultimo de la lista... OK
+El iterador esta al final de la lista... OK
+La lista esta vacia... OK
+Destruyo el iterador... OK
+Inserto pila0... OK
+Inserto pila1... OK
+Inserto pila2... OK
+Destruyo la lista... OK
+INICIO PRUEBAS DE VOLUMEN
+Inserto un volumen de elementos... OK
+El primero es el ultimo insertado... OK
+El ultimo es el primer insertado... OK
+Borro el volumen de elementos... OK
+Inserto un volumen de NULL... OK
+La lista no esta vacia (es true)... OK
+Veo el primero (es NULL)... OK
+Veo el ultimo (es NULL)... OK
+Borro volumen de NULL... OK
+Inserto un volumen de elementos... OK
+El ultimo elemento es el ultimo insertado... OK
+El primer elemento es el primer insertado... OK
+Borro el volumen de elementos... OK
+Inserto un volumen de NULL... OK
+La lista no esta vacia (es true)... OK
+Veo el primero (es NULL)... OK
+Veo el ultimo (es NULL)... OK
+Borro volumen de NULL... OK
+Destruyo la lista... OK
+==54171== 
+==54171== HEAP SUMMARY:
+==54171==     in use at exit: 0 bytes in 0 blocks
+==54171==   total heap usage: 40,172 allocs, 40,172 frees, 647,056 bytes allocated
+==54171== 
+==54171== All heap blocks were freed -- no leaks are possible
+==54171== 
+==54171== ERROR SUMMARY: 9 errors from 5 contexts (suppressed: 0 from 0)
+==54171== 
+==54171== 1 errors in context 1 of 5:
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10DE99: pruebas_condiciones_borde (pruebas_lista.c:579)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a611e8 is 8 bytes after a block of size 16 alloc'd
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10D665: pruebas_condiciones_borde (pruebas_lista.c:541)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+==54171== 
+==54171== 1 errors in context 2 of 5:
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10DE4D: pruebas_condiciones_borde (pruebas_lista.c:578)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a611e8 is 8 bytes after a block of size 16 alloc'd
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10D665: pruebas_condiciones_borde (pruebas_lista.c:541)
+==54171==    by 0x10E81C: pruebas_lista_estudiante (pruebas_lista.c:684)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+==54171== 
+==54171== 1 errors in context 3 of 5:
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C831: pruebas_iterador_externo (pruebas_lista.c:404)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+==54171== 
+==54171== 1 errors in context 4 of 5:
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C7E9: pruebas_iterador_externo (pruebas_lista.c:403)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+==54171== 
+==54171== 5 errors in context 5 of 5:
+==54171== Invalid read of size 8
+==54171==    at 0x1096DA: lista_ver_ultimo (lista.c:113)
+==54171==    by 0x10C91D: pruebas_iterador_externo (pruebas_lista.c:416)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Address 0x4a60998 is 8 bytes after a block of size 16 free'd
+==54171==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x10988C: lista_iter_destruir (lista.c:165)
+==54171==    by 0x10C309: pruebas_iterador_externo (pruebas_lista.c:360)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171==  Block was alloc'd at
+==54171==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==54171==    by 0x109771: lista_iter_crear (lista.c:138)
+==54171==    by 0x10BCCF: pruebas_iterador_externo (pruebas_lista.c:300)
+==54171==    by 0x10E812: pruebas_lista_estudiante (pruebas_lista.c:682)
+==54171==    by 0x10E836: main (pruebas_lista.c:691)
+==54171== 
+==54171== ERROR SUMMARY: 9 errors from 5 contexts (suppressed: 0 from 0)

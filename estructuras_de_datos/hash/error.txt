@@ -1,0 +1,136 @@
+
+~~~ PRUEBAS CÁTEDRA ~~~
+Prueba hash crear hash vacio... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash obtener clave A, es NULL, no existe... OK
+Prueba hash pertenece clave A, es false, no existe... OK
+Prueba hash borrar clave A, es NULL, no existe... OK
+Prueba hash iter crear iterador hash vacio... OK
+Prueba hash iter esta al final... OK
+Prueba hash iter avanzar es false... OK
+Prueba hash iter ver actual es NULL... OK
+Prueba hash insertar clave1... OK
+Prueba hash la cantidad de elementos es 1... OK
+Prueba hash obtener clave1 es valor1... OK
+Prueba hash obtener clave1 es valor1... OK
+Prueba hash pertenece clave1, es true... OK
+Prueba hash borrar clave1, es valor1... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash insertar clave2... OK
+Prueba hash la cantidad de elementos es 1... OK
+Prueba hash obtener clave2 es valor2... OK
+Prueba hash obtener clave2 es valor2... OK
+Prueba hash pertenece clave2, es true... OK
+Prueba hash insertar clave3... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash obtener clave3 es valor3... OK
+Prueba hash obtener clave3 es valor3... OK
+Prueba hash pertenece clave3, es true... OK
+Prueba hash insertar clave1... OK
+Prueba hash obtener clave1 es valor1a... OK
+Prueba hash obtener clave1 es valor1a... OK
+Prueba hash insertar clave2... OK
+Prueba hash obtener clave2 es valor2a... OK
+Prueba hash obtener clave2 es valor2a... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash insertar clave1 con otro valor... OK
+Prueba hash obtener clave1 es valor1b... OK
+Prueba hash obtener clave1 es valor1b... OK
+Prueba hash insertar clave2 con otro valor... OK
+Prueba hash obtener clave2 es valor2b... OK
+Prueba hash obtener clave2 es valor2b... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash insertar clave1... OK
+Prueba hash obtener clave1 es valor1a... OK
+Prueba hash obtener clave1 es valor1a... OK
+Prueba hash insertar clave2... OK
+Prueba hash obtener clave2 es valor2a... OK
+Prueba hash obtener clave2 es valor2a... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash insertar clave1 con otro valor... OK
+Prueba hash obtener clave1 es valor1b... OK
+Prueba hash obtener clave1 es valor1b... OK
+Prueba hash insertar clave2 con otro valor... OK
+Prueba hash obtener clave2 es valor2b... OK
+Prueba hash obtener clave2 es valor2b... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash insertar clave1... OK
+Prueba hash insertar clave2... OK
+Prueba hash insertar clave3... OK
+Prueba hash pertenece clave3, es verdadero... OK
+Prueba hash borrar clave3, es valor3... OK
+Prueba hash borrar clave3, es NULL... OK
+Prueba hash pertenece clave3, es falso... OK
+Prueba hash obtener clave3, es NULL... OK
+Prueba hash la cantidad de elementos es 2... OK
+Prueba hash pertenece clave1, es verdadero... OK
+Prueba hash borrar clave1, es valor1... OK
+Prueba hash borrar clave1, es NULL... OK
+Prueba hash pertenece clave1, es falso... OK
+Prueba hash obtener clave1, es NULL... OK
+Prueba hash la cantidad de elementos es 1... OK
+Prueba hash pertenece clave2, es verdadero... OK
+Prueba hash borrar clave2, es valor2... OK
+Prueba hash borrar clave2, es NULL... OK
+Prueba hash pertenece clave2, es falso... OK
+Prueba hash obtener clave2, es NULL... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash insertar clave vacia... OK
+Prueba hash la cantidad de elementos es 1... OK
+Prueba hash obtener clave vacia es valor... OK
+Prueba hash pertenece clave vacia, es true... OK
+Prueba hash borrar clave vacia, es valor... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash insertar clave vacia valor NULL... OK
+Prueba hash la cantidad de elementos es 1... OK
+Prueba hash obtener clave vacia es valor NULL... OK
+Prueba hash pertenece clave vacia, es true... OK
+Prueba hash borrar clave vacia, es valor NULL... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash almacenar muchos elementos... OK
+Prueba hash la cantidad de elementos es correcta... OK
+Prueba hash pertenece y obtener muchos elementos... OK
+Prueba hash la cantidad de elementos es correcta... OK
+Prueba hash borrar muchos elementos... OK
+Prueba hash la cantidad de elementos es 0... OK
+Prueba hash insertar clave1... OK
+Prueba hash insertar clave2... OK
+Prueba hash insertar clave3... OK
+Prueba hash iterador esta al final, es false... OK
+Prueba hash iterador ver actual, es una clave valida... OK
+Prueba hash iterador ver actual, no es el mismo puntero... OK
+Prueba hash iterador avanzar es true... OK
+Prueba hash iterador esta al final, es false... OK
+Prueba hash iterador ver actual, es una clave valida... OK
+Prueba hash iterador ver actual, no es el mismo puntero... OK
+Prueba hash iterador avanzar es true... OK
+Prueba hash iterador esta al final, es false... OK
+Prueba hash iterador ver actual, es una clave valida... OK
+Prueba hash iterador ver actual, no es el mismo puntero... OK
+Prueba hash iterador esta al final, es true... OK
+Prueba hash iterador ver actual, es NULL... OK
+Prueba hash iterador avanzar es false... OK
+Prueba hash iterador esta al final, es true... OK
+Prueba hash iterador esta al final, es false... OK
+Prueba hash iteración en volumen... OK
+Prueba hash iteración en volumen, recorrio todo el largo... OK
+Prueba hash iterador esta al final, es true... OK
+Prueba hash iteración en volumen, se cambiaron todo los elementos... OK
+Cantidad es 0... OK
+Cantidad es 1... OK
+Cantidad es 0... OK
+Cantidad es 1... OK
+Cantidad es 1... OK
+Cantidad es 1... OK
+Cantidad es 0... OK
+NULL... OK
+NULL... OK
+NULL... OK
+Cantidad es 0... OK
+Cantidad es 0... OK
+Cantidad es 1... OK
+Cantidad es 2... OK
+Cantidad es 3... OK
+!NULL... OK
+NULL... OK
+NULL... OK

@@ -1,0 +1,467 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.08      0.01     0.01    86235     0.00     0.00  f_hash
+  0.00      0.01     0.00    35069     0.00     0.00  hash_pertenece
+  0.00      0.01     0.00    23340     0.00     0.00  hash_iter_al_final
+  0.00      0.01     0.00    15019     0.00     0.00  hash_guardar
+  0.00      0.01     0.00    10028     0.00     0.00  hash_obtener
+  0.00      0.01     0.00     5010     0.00     0.00  hash_borrar
+  0.00      0.01     0.00     5007     0.00     0.00  hash_iter_avanzar
+  0.00      0.01     0.00     5005     0.00     0.00  hash_iter_ver_actual
+  0.00      0.01     0.00      116     0.00     0.00  real_print_test
+  0.00      0.01     0.00       24     0.00     0.10  redimensionar
+  0.00      0.01     0.00       19     0.00     0.00  hash_cantidad
+  0.00      0.01     0.00       12     0.00     0.00  hash_crear
+  0.00      0.01     0.00       12     0.00     0.00  hash_destruir
+  0.00      0.01     0.00       12     0.00     0.00  hash_destruir_tabla
+  0.00      0.01     0.00        3     0.00     0.00  buscar
+  0.00      0.01     0.00        3     0.00     0.00  hash_iter_crear
+  0.00      0.01     0.00        3     0.00     0.00  hash_iter_destruir
+  0.00      0.01     0.00        1     0.00     0.00  failure_count
+  0.00      0.01     0.00        1     0.00     0.00  prueba_crear_hash_vacio
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_borrar
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_clave_vacia
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_insertar
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_iterar
+  0.00      0.01     0.00        1     0.00     2.93  prueba_hash_iterar_volumen
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_reemplazar
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_reemplazar_con_destruir
+  0.00      0.01     0.00        1     0.00     0.00  prueba_hash_valor_null
+  0.00      0.01     0.00        1     0.00     7.06  prueba_hash_volumen
+  0.00      0.01     0.00        1     0.00     0.00  prueba_iterar_hash_vacio
+  0.00      0.01     0.00        1     0.00    10.01  pruebas_hash_catedra
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 99.92% of 0.01 seconds
+
+index % time    self  children    called     name
+                0.00    0.00    5006/86235       hash_borrar [10]
+                0.00    0.00   10024/86235       hash_obtener [9]
+                0.00    0.00   15019/86235       hash_guardar [5]
+                0.00    0.00   21134/86235       redimensionar [8]
+                0.00    0.00   35052/86235       hash_pertenece [6]
+[1]    100.0    0.01    0.00   86235         f_hash [1]
+-----------------------------------------------
+                0.00    0.01       1/1           main [3]
+[2]    100.0    0.00    0.01       1         pruebas_hash_catedra [2]
+                0.00    0.01       1/1           prueba_hash_volumen [4]
+                0.00    0.00       1/1           prueba_hash_iterar_volumen [7]
+                0.00    0.00       1/1           prueba_hash_borrar [11]
+                0.00    0.00       1/1           prueba_hash_reemplazar [12]
+                0.00    0.00       1/1           prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00       1/1           prueba_hash_insertar [14]
+                0.00    0.00       1/1           prueba_hash_iterar [15]
+                0.00    0.00       1/1           prueba_hash_clave_vacia [16]
+                0.00    0.00       1/1           prueba_hash_valor_null [17]
+                0.00    0.00       1/1           prueba_crear_hash_vacio [18]
+                0.00    0.00       1/1           prueba_iterar_hash_vacio [31]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]    100.0    0.00    0.01                 main [3]
+                0.00    0.01       1/1           pruebas_hash_catedra [2]
+                0.00    0.00       1/1           failure_count [30]
+-----------------------------------------------
+                0.00    0.01       1/1           pruebas_hash_catedra [2]
+[4]     70.5    0.00    0.01       1         prueba_hash_volumen [4]
+                0.00    0.00   10000/15019       hash_guardar [5]
+                0.00    0.00    5000/5010        hash_borrar [10]
+                0.00    0.00    5000/10028       hash_obtener [9]
+                0.00    0.00    5000/35069       hash_pertenece [6]
+                0.00    0.00       6/116         real_print_test [22]
+                0.00    0.00       3/19          hash_cantidad [23]
+                0.00    0.00       2/12          hash_crear [24]
+                0.00    0.00       2/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/15019       prueba_hash_clave_vacia [16]
+                0.00    0.00       1/15019       prueba_hash_valor_null [17]
+                0.00    0.00       3/15019       prueba_hash_insertar [14]
+                0.00    0.00       3/15019       prueba_hash_borrar [11]
+                0.00    0.00       3/15019       prueba_hash_iterar [15]
+                0.00    0.00       4/15019       prueba_hash_reemplazar [12]
+                0.00    0.00       4/15019       prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00    5000/15019       prueba_hash_iterar_volumen [7]
+                0.00    0.00   10000/15019       prueba_hash_volumen [4]
+[5]     53.2    0.00    0.01   15019         hash_guardar [5]
+                0.00    0.00      18/24          redimensionar [8]
+                0.00    0.00   15019/86235       f_hash [1]
+                0.00    0.00   15019/35069       hash_pertenece [6]
+-----------------------------------------------
+                0.00    0.00       1/35069       prueba_crear_hash_vacio [18]
+                0.00    0.00       1/35069       prueba_hash_clave_vacia [16]
+                0.00    0.00       1/35069       prueba_hash_valor_null [17]
+                0.00    0.00       3/35069       prueba_hash_insertar [14]
+                0.00    0.00       6/35069       prueba_hash_borrar [11]
+                0.00    0.00    5000/35069       prueba_hash_volumen [4]
+                0.00    0.00    5010/35069       hash_borrar [10]
+                0.00    0.00   10028/35069       hash_obtener [9]
+                0.00    0.00   15019/35069       hash_guardar [5]
+[6]     40.6    0.00    0.00   35069         hash_pertenece [6]
+                0.00    0.00   35052/86235       f_hash [1]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[7]     29.3    0.00    0.00       1         prueba_hash_iterar_volumen [7]
+                0.00    0.00    5000/15019       hash_guardar [5]
+                0.00    0.00    5000/10028       hash_obtener [9]
+                0.00    0.00    5002/23340       hash_iter_al_final [19]
+                0.00    0.00    5000/5005        hash_iter_ver_actual [21]
+                0.00    0.00    5000/5007        hash_iter_avanzar [20]
+                0.00    0.00       5/116         real_print_test [22]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/3           hash_iter_crear [28]
+                0.00    0.00       1/12          hash_destruir [25]
+                0.00    0.00       1/3           hash_iter_destruir [29]
+-----------------------------------------------
+                0.00    0.00       6/24          hash_borrar [10]
+                0.00    0.00      18/24          hash_guardar [5]
+[8]     24.5    0.00    0.00      24         redimensionar [8]
+                0.00    0.00   21134/86235       f_hash [1]
+-----------------------------------------------
+                0.00    0.00       1/10028       prueba_crear_hash_vacio [18]
+                0.00    0.00       1/10028       prueba_hash_clave_vacia [16]
+                0.00    0.00       1/10028       prueba_hash_valor_null [17]
+                0.00    0.00       3/10028       prueba_hash_borrar [11]
+                0.00    0.00       6/10028       prueba_hash_insertar [14]
+                0.00    0.00       8/10028       prueba_hash_reemplazar [12]
+                0.00    0.00       8/10028       prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00    5000/10028       prueba_hash_volumen [4]
+                0.00    0.00    5000/10028       prueba_hash_iterar_volumen [7]
+[9]     23.2    0.00    0.00   10028         hash_obtener [9]
+                0.00    0.00   10024/86235       f_hash [1]
+                0.00    0.00   10028/35069       hash_pertenece [6]
+-----------------------------------------------
+                0.00    0.00       1/5010        prueba_crear_hash_vacio [18]
+                0.00    0.00       1/5010        prueba_hash_insertar [14]
+                0.00    0.00       1/5010        prueba_hash_clave_vacia [16]
+                0.00    0.00       1/5010        prueba_hash_valor_null [17]
+                0.00    0.00       6/5010        prueba_hash_borrar [11]
+                0.00    0.00    5000/5010        prueba_hash_volumen [4]
+[10]    17.7    0.00    0.00    5010         hash_borrar [10]
+                0.00    0.00       6/24          redimensionar [8]
+                0.00    0.00    5010/35069       hash_pertenece [6]
+                0.00    0.00    5006/86235       f_hash [1]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[11]     0.0    0.00    0.00       1         prueba_hash_borrar [11]
+                0.00    0.00       6/5010        hash_borrar [10]
+                0.00    0.00       3/15019       hash_guardar [5]
+                0.00    0.00       3/10028       hash_obtener [9]
+                0.00    0.00       6/35069       hash_pertenece [6]
+                0.00    0.00      21/116         real_print_test [22]
+                0.00    0.00       3/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[12]     0.0    0.00    0.00       1         prueba_hash_reemplazar [12]
+                0.00    0.00       8/10028       hash_obtener [9]
+                0.00    0.00       4/15019       hash_guardar [5]
+                0.00    0.00      14/116         real_print_test [22]
+                0.00    0.00       2/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[13]     0.0    0.00    0.00       1         prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00       8/10028       hash_obtener [9]
+                0.00    0.00       4/15019       hash_guardar [5]
+                0.00    0.00      14/116         real_print_test [22]
+                0.00    0.00       2/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[14]     0.0    0.00    0.00       1         prueba_hash_insertar [14]
+                0.00    0.00       6/10028       hash_obtener [9]
+                0.00    0.00       3/15019       hash_guardar [5]
+                0.00    0.00       1/5010        hash_borrar [10]
+                0.00    0.00       3/35069       hash_pertenece [6]
+                0.00    0.00      17/116         real_print_test [22]
+                0.00    0.00       4/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[15]     0.0    0.00    0.00       1         prueba_hash_iterar [15]
+                0.00    0.00       3/15019       hash_guardar [5]
+                0.00    0.00      18/116         real_print_test [22]
+                0.00    0.00       5/23340       hash_iter_al_final [19]
+                0.00    0.00       4/5005        hash_iter_ver_actual [21]
+                0.00    0.00       4/5007        hash_iter_avanzar [20]
+                0.00    0.00       3/3           buscar [27]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/3           hash_iter_crear [28]
+                0.00    0.00       1/3           hash_iter_destruir [29]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[16]     0.0    0.00    0.00       1         prueba_hash_clave_vacia [16]
+                0.00    0.00       1/15019       hash_guardar [5]
+                0.00    0.00       1/5010        hash_borrar [10]
+                0.00    0.00       1/10028       hash_obtener [9]
+                0.00    0.00       1/35069       hash_pertenece [6]
+                0.00    0.00       6/116         real_print_test [22]
+                0.00    0.00       2/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[17]     0.0    0.00    0.00       1         prueba_hash_valor_null [17]
+                0.00    0.00       1/15019       hash_guardar [5]
+                0.00    0.00       1/5010        hash_borrar [10]
+                0.00    0.00       1/10028       hash_obtener [9]
+                0.00    0.00       1/35069       hash_pertenece [6]
+                0.00    0.00       6/116         real_print_test [22]
+                0.00    0.00       2/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[18]     0.0    0.00    0.00       1         prueba_crear_hash_vacio [18]
+                0.00    0.00       1/5010        hash_borrar [10]
+                0.00    0.00       1/10028       hash_obtener [9]
+                0.00    0.00       1/35069       hash_pertenece [6]
+                0.00    0.00       5/116         real_print_test [22]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/19          hash_cantidad [23]
+                0.00    0.00       1/12          hash_destruir [25]
+-----------------------------------------------
+                0.00    0.00       1/23340       prueba_iterar_hash_vacio [31]
+                0.00    0.00       5/23340       prueba_hash_iterar [15]
+                0.00    0.00    5002/23340       prueba_hash_iterar_volumen [7]
+                0.00    0.00    5005/23340       hash_iter_ver_actual [21]
+                0.00    0.00   13327/23340       hash_iter_avanzar [20]
+[19]     0.0    0.00    0.00   23340         hash_iter_al_final [19]
+-----------------------------------------------
+                0.00    0.00       1/5007        prueba_iterar_hash_vacio [31]
+                0.00    0.00       2/5007        hash_iter_crear [28]
+                0.00    0.00       4/5007        prueba_hash_iterar [15]
+                0.00    0.00    5000/5007        prueba_hash_iterar_volumen [7]
+[20]     0.0    0.00    0.00    5007         hash_iter_avanzar [20]
+                0.00    0.00   13327/23340       hash_iter_al_final [19]
+-----------------------------------------------
+                0.00    0.00       1/5005        prueba_iterar_hash_vacio [31]
+                0.00    0.00       4/5005        prueba_hash_iterar [15]
+                0.00    0.00    5000/5005        prueba_hash_iterar_volumen [7]
+[21]     0.0    0.00    0.00    5005         hash_iter_ver_actual [21]
+                0.00    0.00    5005/23340       hash_iter_al_final [19]
+-----------------------------------------------
+                0.00    0.00       4/116         prueba_iterar_hash_vacio [31]
+                0.00    0.00       5/116         prueba_crear_hash_vacio [18]
+                0.00    0.00       5/116         prueba_hash_iterar_volumen [7]
+                0.00    0.00       6/116         prueba_hash_clave_vacia [16]
+                0.00    0.00       6/116         prueba_hash_valor_null [17]
+                0.00    0.00       6/116         prueba_hash_volumen [4]
+                0.00    0.00      14/116         prueba_hash_reemplazar [12]
+                0.00    0.00      14/116         prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00      17/116         prueba_hash_insertar [14]
+                0.00    0.00      18/116         prueba_hash_iterar [15]
+                0.00    0.00      21/116         prueba_hash_borrar [11]
+[22]     0.0    0.00    0.00     116         real_print_test [22]
+-----------------------------------------------
+                0.00    0.00       1/19          prueba_crear_hash_vacio [18]
+                0.00    0.00       2/19          prueba_hash_reemplazar [12]
+                0.00    0.00       2/19          prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00       2/19          prueba_hash_clave_vacia [16]
+                0.00    0.00       2/19          prueba_hash_valor_null [17]
+                0.00    0.00       3/19          prueba_hash_borrar [11]
+                0.00    0.00       3/19          prueba_hash_volumen [4]
+                0.00    0.00       4/19          prueba_hash_insertar [14]
+[23]     0.0    0.00    0.00      19         hash_cantidad [23]
+-----------------------------------------------
+                0.00    0.00       1/12          prueba_crear_hash_vacio [18]
+                0.00    0.00       1/12          prueba_iterar_hash_vacio [31]
+                0.00    0.00       1/12          prueba_hash_insertar [14]
+                0.00    0.00       1/12          prueba_hash_reemplazar [12]
+                0.00    0.00       1/12          prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00       1/12          prueba_hash_borrar [11]
+                0.00    0.00       1/12          prueba_hash_clave_vacia [16]
+                0.00    0.00       1/12          prueba_hash_valor_null [17]
+                0.00    0.00       1/12          prueba_hash_iterar [15]
+                0.00    0.00       1/12          prueba_hash_iterar_volumen [7]
+                0.00    0.00       2/12          prueba_hash_volumen [4]
+[24]     0.0    0.00    0.00      12         hash_crear [24]
+-----------------------------------------------
+                0.00    0.00       1/12          prueba_crear_hash_vacio [18]
+                0.00    0.00       1/12          prueba_iterar_hash_vacio [31]
+                0.00    0.00       1/12          prueba_hash_insertar [14]
+                0.00    0.00       1/12          prueba_hash_reemplazar [12]
+                0.00    0.00       1/12          prueba_hash_reemplazar_con_destruir [13]
+                0.00    0.00       1/12          prueba_hash_borrar [11]
+                0.00    0.00       1/12          prueba_hash_clave_vacia [16]
+                0.00    0.00       1/12          prueba_hash_valor_null [17]
+                0.00    0.00       1/12          prueba_hash_iterar [15]
+                0.00    0.00       1/12          prueba_hash_iterar_volumen [7]
+                0.00    0.00       2/12          prueba_hash_volumen [4]
+[25]     0.0    0.00    0.00      12         hash_destruir [25]
+                0.00    0.00      12/12          hash_destruir_tabla [26]
+-----------------------------------------------
+                0.00    0.00      12/12          hash_destruir [25]
+[26]     0.0    0.00    0.00      12         hash_destruir_tabla [26]
+-----------------------------------------------
+                0.00    0.00       3/3           prueba_hash_iterar [15]
+[27]     0.0    0.00    0.00       3         buscar [27]
+-----------------------------------------------
+                0.00    0.00       1/3           prueba_iterar_hash_vacio [31]
+                0.00    0.00       1/3           prueba_hash_iterar [15]
+                0.00    0.00       1/3           prueba_hash_iterar_volumen [7]
+[28]     0.0    0.00    0.00       3         hash_iter_crear [28]
+                0.00    0.00       2/5007        hash_iter_avanzar [20]
+-----------------------------------------------
+                0.00    0.00       1/3           prueba_iterar_hash_vacio [31]
+                0.00    0.00       1/3           prueba_hash_iterar [15]
+                0.00    0.00       1/3           prueba_hash_iterar_volumen [7]
+[29]     0.0    0.00    0.00       3         hash_iter_destruir [29]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[30]     0.0    0.00    0.00       1         failure_count [30]
+-----------------------------------------------
+                0.00    0.00       1/1           pruebas_hash_catedra [2]
+[31]     0.0    0.00    0.00       1         prueba_iterar_hash_vacio [31]
+                0.00    0.00       4/116         real_print_test [22]
+                0.00    0.00       1/12          hash_crear [24]
+                0.00    0.00       1/3           hash_iter_crear [28]
+                0.00    0.00       1/23340       hash_iter_al_final [19]
+                0.00    0.00       1/5007        hash_iter_avanzar [20]
+                0.00    0.00       1/5005        hash_iter_ver_actual [21]
+                0.00    0.00       1/12          hash_destruir [25]
+                0.00    0.00       1/3           hash_iter_destruir [29]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [27] buscar (hash_pruebas.c) [20] hash_iter_avanzar     [15] prueba_hash_iterar (hash_pruebas.c)
+   [1] f_hash                 [28] hash_iter_crear         [7] prueba_hash_iterar_volumen (hash_pruebas.c)
+  [30] failure_count          [29] hash_iter_destruir     [12] prueba_hash_reemplazar (hash_pruebas.c)
+  [10] hash_borrar            [21] hash_iter_ver_actual   [13] prueba_hash_reemplazar_con_destruir (hash_pruebas.c)
+  [23] hash_cantidad           [9] hash_obtener           [17] prueba_hash_valor_null (hash_pruebas.c)
+  [24] hash_crear              [6] hash_pertenece          [4] prueba_hash_volumen (hash_pruebas.c)
+  [25] hash_destruir          [18] prueba_crear_hash_vacio (hash_pruebas.c) [31] prueba_iterar_hash_vacio (hash_pruebas.c)
+  [26] hash_destruir_tabla    [11] prueba_hash_borrar (hash_pruebas.c) [2] pruebas_hash_catedra
+   [5] hash_guardar           [16] prueba_hash_clave_vacia (hash_pruebas.c) [22] real_print_test
+  [19] hash_iter_al_final     [14] prueba_hash_insertar (hash_pruebas.c) [8] redimensionar

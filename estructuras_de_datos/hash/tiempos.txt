@@ -1,0 +1,29 @@
+nov 30 
+
+12:56
+
+12500 elementos - Tardó: 0.95s - Consumió: 3656 KiB
+25000 elementos - Tardó: 5.95s - Consumió: 5700 KiB
+50000 elementos - Tardó: 19.27s - Consumió: 9584 KiB
+100000 elementos - Tardó: 43.32s - Consumió: 18076 KiB
+200000 elementos - Tardó: 149.61s - Consumió: 34516 KiB
+400000 elementos - messi
+
+13:22
+
+12500 elementos - Tardó: 0.07s - Consumió: 4108 KiB
+25000 elementos - Tardó: 0.05s - Consumió: 6612 KiB
+50000 elementos - Tard��: 0.11s - Consumió: 11800 KiB
+100000 elementos - Tardó: 0.25s - Consumió: 21760 KiB
+200000 elementos - Tard��: 0.61s - Consumió: 42140 KiB
+400000 elementos - Tardó: 1.32s - Consumió: 82748 KiB
+
+13:26
+
+12500 elementos - Tardó: 0.03s - Consumió: 4040 KiB
+25000 elementos - Tardó: 0.04s - Consumió: 6540 KiB
+50000 elementos - Tardó: 0.16s - Consumió: 11712 KiB
+100000 elementos - Tard��: 0.25s - Consumió: 21896 KiB
+200000 elementos - Tardó: 0.59s - Consumió: 42164 KiB
+400000 elementos - Tardó: 1.31s - Consumió: 82748 KiB
+800000 elementos - Tardó: 2.41s - Consumió: 163884 KiB
